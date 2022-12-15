@@ -28,13 +28,24 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                        <input type="text" class="form-control form-control-user" name="username" placeholder="{{ __('username') }}" value="{{ old('username') }}" required >
                                     </div>
-
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" name="last_name" placeholder="{{ __('Last Name') }}" value="{{ old('last_name') }}" required>
+                                        <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required>
                                     </div>
-
+                                
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="lastname" placeholder="{{ __('Last Name') }}" value="{{ old('lastname') }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="address" placeholder="{{ __('address') }}" value="{{ old('address') }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control form-control-user" name="birthdate"  value="{{ old('birthdate ') }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="phone" placeholder="{{ __('phone ') }}" value="{{ old('phone') }}" required>
+                                    </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('E-Mail Address') }}" value="{{ old('email') }}" required>
                                     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
+// Route::put('/adminOverview', '@update')->name('profile.update');
+Route::get('/overview', 'UserController@index')->name('admin.overview');
+Route::get('/add-user', 'UserController@create')->name('user.create');
+Route::post('/store-user', 'UserController@store')->name('user.store');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/getAllUsers','UserController@getAllUsers')->name('getAllUsers');

@@ -179,12 +179,12 @@ class UserController extends Controller
     public function destroy(Request $request, User $user)
     {
 
-        // $users = User::count();
+        $users = User::count();
 
-        // $widget = [
-        //     'users' => $users,
-        //     //...
-        // ];
+        $widget = [
+            'users' => $users,
+            //...
+        ];
 
         // $request->validate([
         //     DB::table('user')

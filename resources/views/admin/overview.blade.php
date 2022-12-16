@@ -137,10 +137,10 @@ serverSide: true,
 ajax: "{{ url('getAllUsers') }}",
 columns: [
 { data: 'id', name: 'id' },
-{ data: 'username', name: 'username' },
-{ data: 'name', name: 'name' },   
-{ data: 'address', name: 'address' },
+{ data: 'name', name: 'name' },
+{ data: 'address', name: 'address' },   
 { data: 'phone', name: 'phone' },
+{ data: 'role', name: 'role' },
 {data: 'action', name: 'action', orderable: false},
 ],
 order: [[0, 'desc']]

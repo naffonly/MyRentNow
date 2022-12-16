@@ -101,9 +101,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
+        return view('admin.user.edit-user',compact('user'));
     }
 
     /**
@@ -124,9 +125,49 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $users = User::count();
+
+        $widget = [
+            'users' => $users,
+            //...
+        ];
+    
+        $request->validate([
+            'username'  => ['required'],
+            'name'      => ['required'],
+            'lastname'  => ['required'],
+            'email'     => ['required'],
+            'address'   => ['required'],
+            'role'      => ['required'],
+            'phone'     => ['required'],
+            'birthdate' => ['required', 'before:today'],
+            'password' => 'required|confirmed', 
+        ]);
+
+    
+        
+
+     
+        $affected = DB::table('users')  
+        ->where('id', $request->id)
+        ->update([
+            'username'      => $request->username,
+            'name'      => $request->name,
+            'lastname'      => $request->lastname,
+            'email'         => $request->email,
+            'address'       => $request->address,
+            'roleId'   => $request->role,
+            'phone'   => $request->phone,
+            'birthdate'     => $request->birthdate,
+            'password' => Hash::make($request->password),
+             
+              
+
+        ]);
+            return view('admin.overview', compact('widget'));
     }
 
     /**
@@ -135,33 +176,61 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, User $user)
     {
-        //
+
+        // $users = User::count();
+
+        // $widget = [
+        //     'users' => $users,
+        //     //...
+        // ];
+
+        // $request->validate([
+        //     DB::table('user')
+        //     ->where('id', $user->id)
+        //     ->update(['itsDelete' => 0,]);
+        // ]);
+        // //
+        // // $affected = DB::table('users')  
+        // // ->where('id', $request->id)
+        // // ->update([
+        // //     'itsDelete' => 0,
+        // // ]);
+        // $user=User::where('id',$id)
+        // ->update([
+        //     'itsDelete' => 0,
+        // ]); //returns true/false
+        //     return view('admin.overview', compact('widget'));
     }
     public function getAllUsers()
     {
-        $users = DB::table('users')
+        $users = DB::table('users as u')
             ->select(
-                'id as id',
-                'username as username',
-                'name as name',
-                'lastname as lname',
-                'email as email',
-                'address as address',
-                'phone as phone',
-                'indetityFace as iFace',
-                'indetityCard as iCard',
-                'birthdate as birthdate',
-                'itsDelete as statusAkun'
+                'u.id as id',
+                'u.username as username',
+                'u.name as name',
+                'u.lastname as lname',
+                'u.email as email',
+                'u.address as address',
+                'u.phone as phone',
+                'u.roleId as roles',
+                'r.nameRole as role',
+                'u.indetityFace as iFace',
+                'u.indetityCard as iCard',
+                'u.birthdate as birthdate',
+                'u.itsDelete as statusAkun'
                 )
+            ->join('roles as r','r.id','=','roleId')
+            ->where('itsDelete','=','1')
             ->orderBy('id', 'asc')
             ->get();
 
             return DataTables::of($users)
             ->addColumn('action', function($user) {
                 $html = '
-                <a class="btn btn-info" href="/userDetail/'.$user->id.'">Show</a>
+                <a class="btn btn-info" href="/detail-user/'.$user->id.'">Show</a>
+                <a class="btn btn-danger" href="/del-user/'.$user->id.'">Delete</a>
                 ';
                 return $html;
             })

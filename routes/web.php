@@ -30,6 +30,6 @@ Route::get('/add-user', 'UserController@create')->name('user.create');
 Route::post('/store-user', 'UserController@store')->name('user.store');
 Route::get('/detail-user/{user}', 'UserController@show')->name('user.show');
 Route::post('/user-update', 'UserController@update')->name('user.update');
-Route::get('/user-del/{user}', 'UserController@destroy')->name('user.destroy');
+Route::get('/user-del/{user}', 'UserController@softDelete')->name('user.softDelete');
 
 Route::get('/getAllUsers','UserController@getAllUsers')->name('getAllUsers');

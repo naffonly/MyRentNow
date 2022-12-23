@@ -186,23 +186,18 @@ class UserController extends Controller
             //...
         ];
 
-        // $request->validate([
-        //     DB::table('user')
-        //     ->where('id', $user->id)
-        //     ->update(['itsDelete' => 0,]);
-        // ]);
-        // //
-        // // $affected = DB::table('users')  
-        // // ->where('id', $request->id)
-        // // ->update([
-        // //     'itsDelete' => 0,
-        // // ]);
-        // $user=User::where('id',$id)
-        // ->update([
-        //     'itsDelete' => 0,
-        // ]); //returns true/false
-        //     return view('admin.overview', compact('widget'));
     }
+
+    public function softDelete(Request $request,User $user)
+    {
+        # code...
+        $user->itsDelete = 0;
+        $user->save();
+
+        return back();
+    }
+
+
     public function getAllUsers()
     {
         $users = DB::table('users as u')
@@ -225,13 +220,18 @@ class UserController extends Controller
             ->where('itsDelete','=','1')
             ->orderBy('id', 'asc')
             ->get();
+            
 
             return DataTables::of($users)
             ->addColumn('action', function($user) {
+                $link = 'user.softDelete';
+                $userid = 'user';
                 $html = '
                 <a class="btn btn-info" href="/detail-user/'.$user->id.'">Show</a>
-                <a class="btn btn-danger" href="/del-user/'.$user->id.'">Delete</a>
-                ';
+                <form class="btn-group" action="'. route($link,[$userid=>$user->id]) . '" method="put">
+                 <button type="submit" class="btn btn-danger">Delete</button>
+                </form>';
+               
                 return $html;
             })
             ->make(true);

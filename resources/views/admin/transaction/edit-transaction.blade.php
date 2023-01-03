@@ -32,57 +32,38 @@
                                         </ul>
                                     </div>
                                 @endif
-                        
-                                <form method="POST" action="{{ route('transaction.store') }}" autocomplete="off">
-                                
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="id" value="{{$transaction->id}}">
-                        <div class="row">
-                       
-                            <div class="col-lg-6">
-                                    <div class="form-group focused"> 
-                                            <label class="form-control-label" for="idPeminjam">Peminjam<span class="small text-danger">*</span></label>
-                                            @foreach($data as $b)
-                                            
-                                            <input type="text" class="form-control" value="{{$b->nProduct}}" readonly>
-                                            @endforeach
+                        @foreach($data as $detail)
+                                <div class="row">
+                                    <div class="col-4">
+                                    
+                                     <div class="card-body">
+                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 330px; width: 350px;" src="{{ asset($detail->indenF) }}" alt="Responsive image"></img>
+                                        </div>
+                                        <div class="card-header text-center">
+                                       <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
+                                     </div>
+                                    </div>
+                                    <div class="col-4">
+                                    <div class="card-body">
+                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 330px; width: 350px;" src="{{ asset($detail->indenC) }}" alt="Responsive image"></img>
+                                        </div>
+                                        <div class="card-header text-center">
+                                       <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
+                                     </div></div>
+                                    <div class="col-4">
+                                        <div class="card-body">
+                                            <img  class="img-thumbnail rounded" style="font-size: 60px; height: 330px; width: 350px;" src="{{ asset($detail->imgP) }}" alt="Responsive image"></img>
+                                        </div>
+                                        <div class="card-header text-center">
+                                            <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group focused"> 
-                                            <label class="form-control-label" for="idProduct">Status<span class="small text-danger">*</span></label>
-                    
-                                                <select class="form-select form-control " name="idStatus">
-                                                    <option selected>Pilih Kategori</option>
-                                                    <option value="1" @if (old('idStatus', $transaction->status) == 1) selected @endif>Pending</option>
-                                                    <option value="2" @if (old('idStatus', $transaction->status) == 2) selected @endif>Dipinjam</option>
-                                                    <option value="3" @if (old('idStatus', $transaction->status) == 3) selected @endif>Dikembali</option>
-                                                    <option value="4" @if (old('idStatus', $transaction->status) == 4) selected @endif>Kamera</option>
-                                               </select>
-                                          
-                                    </div>
+                                <div class="row">
+                                    
+                                    
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="dateIn">Waktu Diambil<span class="small text-danger">*</span></label>
-                                        <input type="datetime-local" id="dateIn" class="form-control" name="dateIn" placeholder="dateIn">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="dateOut">Waktu Dikembali<span class="small text-danger">*</span></label>
-                                        <input type="datetime-local" id="dateOut" class="form-control" name="dateOut" placeholder="dateOut">
-                                    </div>
-                                </div>
-                            </div>
-                       
-                        <!-- Button -->
-                        <button type="reset" class="btn btn-info">Reset</button>
-                    <button type="submit" class="btn btn-info">Save</button>
-                </form>
-               
+                @endforeach
             <hr>
         </div>
     </div>

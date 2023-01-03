@@ -206,7 +206,7 @@ class ProductController extends Controller
                 <form class="btn-group" action="'. route($link,[$productId=>$product->id]) . '" method="put">
                  <button type="submit" class="btn btn-danger">Delete</button>
                 </form>';
-               
+      
                 return $html;
             })
             ->make(true);

@@ -450,6 +450,9 @@ class TransactionController extends Controller
 
     public function getTransaction(Transaction $transaction)
     {
+
+        $setdata = $transaction->id;
+       
         $data = DB::table('transactions as t')
         ->select(
             't.id as id',
@@ -458,6 +461,10 @@ class TransactionController extends Controller
             't.dateIn as dateIn',
             't.dateOut as dateOut',
             't.status as tStatus',
+            'u.email as email',
+            'u.indetityFace as indenC',
+            'u.indetityCard as indenF',
+            'p.imgProduct as imgP',
             DB::raw('
             (CASE
             WHEN t.status="1" THEN "Pending"
@@ -471,11 +478,13 @@ class TransactionController extends Controller
             )
         ->join('products as p','p.id','=','idProduct')
         ->join('users as u','u.id','=','idPeminjam')
-        ->where('t.id','=',$transaction) 
+        ->where('t.id','=',$setdata) 
         ->where('t.itsDelete','=','1')
         ->orderBy('id', 'asc')
         ->get();
 
+        
+// return dd($data);
         return view('admin.transaction.edit-transaction',compact('transaction','data'));
     }
 }

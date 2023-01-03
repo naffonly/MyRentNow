@@ -58,6 +58,7 @@ class RegisterController extends Controller
             'birthdate' => ['required', 'date'],
             'phone' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+           
         ]);
     }
 
@@ -69,6 +70,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+       
         return User::create([
             'username' => $data['username'],
             'name' => $data['name'],
@@ -78,6 +81,7 @@ class RegisterController extends Controller
             'birthdate' => $data['birthdate'],
             'phone' => $data['phone'],
             'password' => $data['password'],
+            'roleId' => 2,
             'itsDelete' => 1,
         ]);
     }

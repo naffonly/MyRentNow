@@ -14,6 +14,7 @@ class Transaction extends Model
         'dateIn',
         'dateOut',
         'status',
+        'priceRent',
         'itsDelete',
         'created_at',
         'updated_at',

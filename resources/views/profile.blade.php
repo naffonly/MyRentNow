@@ -29,7 +29,10 @@
 
             <div class="card shadow mb-4">
                 <div class="card-profile-image mt-4">
-                    <figure class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;" data-initial="{{ Auth::user()->name[0] }}"></figure>
+                    <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset(Auth::user()->indetityCard ) }}" width="300px" >
+                 </div>
+                <div class="card-profile-image mt-4">
+                     <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset(Auth::user()->indetityFace ) }}" width="300px" >
                 </div>
                 <div class="card-body">
 
@@ -53,7 +56,7 @@
 
                 <div class="card-body">
 
-                    <form method="POST" action="{{ route('profile.update') }}" autocomplete="off">
+                    <form method="POST" action="{{ route('profile.update') }}" autocomplete="off" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <input type="hidden" name="_method" value="PUT">
@@ -86,6 +89,21 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="indetityCard">KTP<span class="small text-danger">*</span></label>
+                                        <input type="file" id="indetityCard" class="form-control" name="indetityCard" placeholder="indetity Card" >
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="indetityFace">Foto Wajah</label>
+                                        <input type="file" id="indetityFace" class="form-control" name="indetityFace" placeholder="indetity Face" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="current_password">Current password</label>
@@ -111,7 +129,7 @@
                         <div class="pl-lg-4">
                             <div class="row">
                                 <div class="col text-center">
-                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    <button type="submit" class="btn btn-info">Save Changes</button>
                                 </div>
                             </div>
                         </div>

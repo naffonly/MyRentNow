@@ -14,6 +14,8 @@ class Product extends Model
         'imgProduct',
         'priceProduct',
         'itsDelete',
+        'stockProduct',
+        'categoryId',
         'created_at',
         'updated_at',
     ];

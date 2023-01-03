@@ -104,7 +104,7 @@
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Data Users</h6>
             </div>
-            <a class="btn btn-success mx-2" href="{{ route('product.create') }}"> Tambah Data</a>
+            <a class="btn btn-success mx-2" href="{{ route('article.create') }}"> Tambah Data</a>
 
             <div class="card-body">
                 <div class="table-responsive">
@@ -112,9 +112,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama Product</th>
-                                <th>Harga</th>
-                                <th>Stok Barang</th>
+                                <th>Judul Berita</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -123,7 +121,7 @@
             </div>
         </div>
     </div>
-<script type="text/javascript">
+    <script type="text/javascript">
 $(document).ready( function () {
 $.ajaxSetup({
 headers: {
@@ -133,12 +131,10 @@ headers: {
 $('#datatable').DataTable({
 processing: true,
 serverSide: true,
-ajax: "{{ url('getAllProducts') }}",
+ajax: "{{ url('getAllArcticles') }}",
 columns: [
 { data: 'id', name: 'id' },
-{ data: 'nameP', name: 'nameP' },
-{ data: 'priceP', name: 'priceP' },
-{ data: 'stockP', name: 'stockP' },
+{ data: 'title', name: 'title' },
 {data: 'action', name: 'action', orderable: false},
 ],
 order: [[0, 'desc']]

@@ -42,7 +42,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.overview') }}">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <img src="{{ asset('img/lgo.png') }}" alt="" width="50px">
             </div>
             <div class="sidebar-brand-text mx-3">Rent NOw<sup>2</sup></div>
         </a>
@@ -59,19 +59,64 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider">
-
+        
         <!-- Heading -->
         <div class="sidebar-heading">
             {{ __('Settings') }}
         </div>
-
+      
         <!-- Nav Item - Profile -->
-        <li class="nav-item {{ Nav::isRoute('profile') }}">
-            <a class="nav-link" href="">
-                <i class="fas fa-fw fa-user"></i>
+        <li class="nav-item {{ Nav::isRoute('product.overview') }}">
+            <a class="nav-link" href="{{ route('product.overview') }}">
+                <i class="fas fa-fw fa-archive "></i>
                 <span>{{ __('Product') }}</span>
             </a>
+          
         </li>
+        <li class="nav-item {{ Nav::isRoute('article.overview') }}">
+            <a class="nav-link" href="{{ route('article.overview') }}">
+                <i class="fas fa-fw fa-file"></i>
+                <span>{{ __('Article') }}</span>
+            </a>
+        </li>
+
+        <div class="sidebar-heading">
+            {{ __('Transaction') }}
+        </div>
+        <li class="nav-item {{ Nav::isRoute('transaction.overview') }}">
+            <a class="nav-link" href="{{ route('transaction.overview') }}">
+                <i class="fas fa-fw fa-list"></i>
+                <span>{{ __('Transaction') }}</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Nav::isRoute('transaction.overview.pending') }}">
+            <a class="nav-link" href="{{ route('transaction.overview.pending') }}">
+                <i class="fas fa-fw fa-list"></i>
+                <span>{{ __('Transaction Pending') }}</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Nav::isRoute('transaction.overview.loaned') }}">
+            <a class="nav-link" href="{{ route('transaction.overview.loaned') }}">
+                <i class="fas fa-fw fa-list"></i>
+                <span>{{ __('Transaction Dipinjam') }}</span>
+            </a>
+        </li>
+
+        <li class="nav-item {{ Nav::isRoute('transaction.overview.returned') }}">
+            <a class="nav-link" href="{{ route('transaction.overview.returned') }}">
+                <i class="fas fa-fw fa-list"></i>
+                <span>{{ __('Transaction DiKembalikan') }}</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Nav::isRoute('transaction.overview.lost') }}">
+            <a class="nav-link" href="{{ route('transaction.overview.lost') }}">
+                <i class="fas fa-fw fa-list"></i>
+                <span>{{ __('Transaction Hilang') }}</span>
+            </a>
+        </li>
+
+
+        
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -129,7 +174,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                            <figure class="img-profile rounded-circle avatar font-weight-bold" data-initial="{{ Auth::user()->name[0] }}"></figure>
+                            <img src="{{ asset(Auth::user()->indetityFace ) }}" class="img-profile rounded-circle avatar font-weight-bold" data-initial="{{ Auth::user()->name[0] }}">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

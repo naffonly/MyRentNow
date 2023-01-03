@@ -19,8 +19,12 @@ return new class extends Migration
             $table->longText('spekProduct');
             $table->string('imgProduct',100);
             $table->integer('priceProduct');
+            $table->integer('stockProduct');
+            $table->unsignedBigInteger('categoryId');
             $table->boolean('itsDelete');
             $table->timestamps();
+            
+            $table->foreign('categoryId')->references('id')->on('categoryProduct');
         });
     }
 

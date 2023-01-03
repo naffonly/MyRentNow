@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use SebastianBergmann\CodeCoverage\Driver\Selector;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
@@ -20,8 +21,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = User::count();
-
+        $users = User::where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
             //...
@@ -37,8 +37,7 @@ class UserController extends Controller
     public function create()
     {
         //
-        $users = User::count();
-
+        $users = User::where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
             //...
@@ -55,8 +54,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $users = User::count();
-
+        $users = User::where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
             //...
@@ -128,13 +126,11 @@ class UserController extends Controller
     public function update(Request $request)
     {
         //
-        $users = User::count();
-
+        $users = User::where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
             //...
         ];
-    
         $request->validate([
             'username'  => ['required'],
             'name'      => ['required'],
@@ -163,9 +159,6 @@ class UserController extends Controller
             'phone'   => $request->phone,
             'birthdate'     => $request->birthdate,
             'password' => Hash::make($request->password),
-             
-              
-
         ]);
             return view('admin.overview', compact('widget'));
     }
@@ -179,12 +172,6 @@ class UserController extends Controller
     public function destroy(Request $request, User $user)
     {
 
-        $users = User::count();
-
-        $widget = [
-            'users' => $users,
-            //...
-        ];
 
     }
 
@@ -193,7 +180,6 @@ class UserController extends Controller
         # code...
         $user->itsDelete = 0;
         $user->save();
-
         return back();
     }
 

@@ -104,7 +104,7 @@
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Data Users</h6>
             </div>
-            <a class="btn btn-success mx-2" href="{{ route('product.create') }}"> Tambah Data</a>
+            <a class="btn btn-success mx-2" href="{{ route('transaction.create') }}"> Tambah Data</a>
 
             <div class="card-body">
                 <div class="table-responsive">
@@ -113,8 +113,11 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama Product</th>
+                                <th>Nama Peminjam</th>  
+                                <th>Waktu Ambil</th>  
+                                <th>Waktu Kembali</th>  
                                 <th>Harga</th>
-                                <th>Stok Barang</th>
+                                <th>Status Transaksi</th>  
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -123,7 +126,7 @@
             </div>
         </div>
     </div>
-<script type="text/javascript">
+    <script type="text/javascript">
 $(document).ready( function () {
 $.ajaxSetup({
 headers: {
@@ -133,12 +136,15 @@ headers: {
 $('#datatable').DataTable({
 processing: true,
 serverSide: true,
-ajax: "{{ url('getAllProducts') }}",
+ajax: "{{ url('getAllTransactionsLost') }}",
 columns: [
 { data: 'id', name: 'id' },
-{ data: 'nameP', name: 'nameP' },
-{ data: 'priceP', name: 'priceP' },
-{ data: 'stockP', name: 'stockP' },
+{ data: 'nProduct', name: 'nProduct' },
+{ data: 'name', name: 'name' },
+{ data: 'dateIn', name: 'dateIn' },
+{ data: 'dateOut', name: 'dateOut' },
+{ data: 'price', name: 'price' },
+{ data: 'status', name: 'status' },
 {data: 'action', name: 'action', orderable: false},
 ],
 order: [[0, 'desc']]

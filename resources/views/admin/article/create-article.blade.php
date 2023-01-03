@@ -110,62 +110,34 @@
                                     </div>
                                 @endif
 
-                                <form method="POST" action="{{ route('product.store') }}" autocomplete="off"  enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('article.store') }}" autocomplete="off"  enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" for="nameProduct">Nama<span class="small text-danger">*</span></label>
-                                        <input type="text" id="nameProduct" class="form-control" name="nameProduct" placeholder="nameProduct">
+                                        <label class="form-control-label" for="title">Judul Berita<span class="small text-danger">*</span></label>
+                                        <input type="text" id="title" class="form-control" name="title" placeholder="title">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" for="spekProduct">Spektifikasi<span class="small text-danger">*</span></label>
-                                        <input type="text" id="spekProduct" class="form-control" name="spekProduct" placeholder="spekProduct">
+                                        <label class="form-control-label" for="desk">Deskripsi Berita<span class="small text-danger">*</span></label>
+                                        <textarea type="text" id="desk" class="form-control" name="desk" placeholder="desk"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group focused"> 
-                                            <label class="form-control-label" for="categotyProduct">Kategori<span class="small text-danger">*</span></label>
-                                            <select class="form-select form-control " name="categotyProduct">
-                                                <option selected>Pilih Kategory</option>
-                                                <option value="1" >Laptop</option>
-                                                <option value="2" >HT</option>
-                                                <option value="3" >iPad</option>
-                                                <option value="4" >Kamera</option>
-                                                <option value="5" >Proyektor</option>
-                                            </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" for="imgProduct">Gambar Image</label>
-                                        <input type="file" id="imgProduct" class="form-control" name="imgProduct"  >
+                                        <label class="form-control-label" for="imgArticle">Gambar Image</label>
+                                        <input type="file" id="imgArticle" class="form-control" name="imgArticle"  >
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" >Harga Barang</label>
-                                        <input type="text" class="form-control" name="priceProduct" placeholder="Harga Barang">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label"  >Stok Barang</label>
-                                        <input type="text"  class="form-control" name="stockProduct"  placeholder="Stok Barang">
-                                    </div>
-                                </div>
-
+                          
                             </div>
                             
                         <!-- Button -->

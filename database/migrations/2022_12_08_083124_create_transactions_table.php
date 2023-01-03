@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('idPeminjam');
             $table->unsignedBigInteger('idProduct');
-            $table->date('dateIn')->nullable();
-            $table->date('dateOut')->nullable();
+            $table->dateTime('dateIn')->nullable();
+            $table->dateTime('dateOut')->nullable();
             $table->tinyInteger('status');
+            $table->integer('priceRent')->nullable();
             $table->boolean('itsDelete');
             $table->timestamps();
 

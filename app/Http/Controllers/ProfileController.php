@@ -28,8 +28,8 @@ class ProfileController extends Controller
             'lastname' => 'nullable|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . Auth::user()->id,
             'current_password' => 'nullable|required_with:new_password',
-            'indetityFace' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'indetityCard' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'indetityFace' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'indetityCard' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'new_password' => 'nullable|min:8|max:12|required_with:current_password',
             'password_confirmation' => 'nullable|min:8|max:12|required_with:new_password|same:new_password'
         ]);

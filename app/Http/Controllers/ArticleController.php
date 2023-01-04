@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Product;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,8 +22,15 @@ class ArticleController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.article.daftar-article', compact('widget'));
@@ -36,8 +45,15 @@ class ArticleController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.article.create-article', compact('widget'));
@@ -54,11 +70,17 @@ class ArticleController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
-
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'desk' => ['required', 'string', 'max:255'],
@@ -123,8 +145,15 @@ class ArticleController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
 

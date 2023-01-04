@@ -20,8 +20,15 @@ class TransactionController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.transaction.daftar-transaction',compact('widget'));
@@ -30,8 +37,15 @@ class TransactionController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.transaction.daftar-pending-transaction',compact('widget'));
@@ -41,8 +55,15 @@ class TransactionController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.transaction.daftar-loaned-transaction',compact('widget'));
@@ -51,8 +72,15 @@ class TransactionController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.transaction.daftar-returned-transaction',compact('widget'));
@@ -61,8 +89,15 @@ class TransactionController extends Controller
     {
         //
         $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
             'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.transaction.daftar-lost-transaction',compact('widget'));
@@ -80,8 +115,15 @@ class TransactionController extends Controller
         $allusers = User::where('itsDelete',1)->get()->count();
         $users = User::where('itsDelete',1)->get();
         $products = Product::where('itsDelete',1)->get();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
-            'users' => $allusers,
+            'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
         return view('admin.transaction.create-transaction', compact('widget','products','users'));
@@ -97,13 +139,18 @@ class TransactionController extends Controller
     {
         //
         // dd($request);
-        $allusers = User::where('itsDelete',1)->get()->count();
-        $users = User::where('itsDelete',1)->get();
+        $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
-            'users' => $allusers,
+            'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
             //...
         ];
-
        
         $request->validate([
             'idPeminjam' => ['required', 'integer'],
@@ -297,7 +344,7 @@ class TransactionController extends Controller
                 $linkAprrove = 'transaction.loaned';
                 $transactionid = 'transaction';
                 $html = '
-                <a class="btn btn-info mb-1" href="/detail-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 <form class="btn-group" action="'. route($linkAprrove,[$transactionid=>$transaction->id]) . '" method="put">
                 <input type="hidden" value="'.$transaction->id.'" name="id" > 
                 <button type="submit" class="btn btn-success"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
@@ -343,7 +390,7 @@ class TransactionController extends Controller
                 $linkRentlost = 'transaction.returnedLostRent';
                 $transactionid = 'transaction';
                 $html = '
-                <a class="btn btn-info mb-1" href="/detail-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 <form class="btn-group" action="'. route($linkLoadned,[$transactionid=>$transaction->id]) . '" method="put">
                 <input type="hidden" value="'.$transaction->id.'" name="id" >
                  <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle" aria-hidden="true"></i></button>
@@ -353,7 +400,6 @@ class TransactionController extends Controller
                  <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
                 </form>
                 ';
-               
                 return $html;
             })
             ->make(true);
@@ -392,7 +438,7 @@ class TransactionController extends Controller
                 $linkLost = 'transaction.lost';
                 $transactionid = 'transaction';
                 $html = '
-                <a class="btn btn-info mb-1" href="/detail-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 <form class="btn-group" action="'. route($linkLost,[$transactionid=>$transaction->id]) . '" method="put">
                 <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
                 </form>
@@ -436,7 +482,7 @@ class TransactionController extends Controller
                 $linkLoadned = 'transaction.found';
                 $transactionid = 'transaction';
                 $html = '
-                <a class="btn btn-info mb-1" href="/detail-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 <form class="btn-group" action="'. route($linkLoadned,[$transactionid=>$transaction->id]) . '" method="put">
                 <input type="hidden" value="'.$transaction->id.'" name="id" >
                  <button type="submit" class="btn btn-warning   "><i class="fa fa-check-circle" aria-hidden="true"></i></button>
@@ -462,6 +508,8 @@ class TransactionController extends Controller
             't.dateOut as dateOut',
             't.status as tStatus',
             'u.email as email',
+            'u.phone as phone',
+            'u.address as address',
             'u.indetityFace as indenC',
             'u.indetityCard as indenF',
             'p.imgProduct as imgP',

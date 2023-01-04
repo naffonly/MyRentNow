@@ -33,11 +33,11 @@
                                     </div>
                                 @endif
                         @foreach($data as $detail)
-                                <div class="row">
-                                    <div class="col-4">
+                                <div class="row ">
+                                    <div class="col-4 ">
                                     
                                      <div class="card-body">
-                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 330px; width: 350px;" src="{{ asset($detail->indenF) }}" alt="Responsive image"></img>
+                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->indenF) }}" alt="Responsive image"></img>
                                         </div>
                                         <div class="card-header text-center">
                                        <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
@@ -45,27 +45,94 @@
                                     </div>
                                     <div class="col-4">
                                     <div class="card-body">
-                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 330px; width: 350px;" src="{{ asset($detail->indenC) }}" alt="Responsive image"></img>
+                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->indenC) }}" alt="Responsive image"></img>
                                         </div>
                                         <div class="card-header text-center">
-                                       <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
+                                       <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->name}}</h5>
                                      </div></div>
                                     <div class="col-4">
                                         <div class="card-body">
-                                            <img  class="img-thumbnail rounded" style="font-size: 60px; height: 330px; width: 350px;" src="{{ asset($detail->imgP) }}" alt="Responsive image"></img>
+                                            <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->imgP) }}" alt="Responsive image"></img>
                                         </div>
                                         <div class="card-header text-center">
-                                            <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
+                                            <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->nProduct}}</h5>
                                         </div>
                                     </div>
                                 </div>
+                              <br>
                                 <div class="row">
-                                    
-                                    
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <h1>Detail Transaksi</h1>
+                                        </div>
+                                    </div>                              
                                 </div>
+                                <div class="row px-5">
+                                    <div class="col-4">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Nama<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->name}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Email<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->email}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Nomer HP<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->phone}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row px-5">
+                                    <div class="col-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Alamat<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->address}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Nama Barang<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->nProduct}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row px-5">
+                                    <div class="col-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Tanggal Ambil<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->dateIn}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group focused">
+                                            <label class="form-control-label" for="spekProduct">Tanggal Kembali<span class="small text-danger">*</span></label>
+                                            <input type="text" id="spekProduct" class="form-control" name="spekProduct" value="{{$detail->dateOut}}" placeholder="spekProduct" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <h1>Nominal Pembayaran</h1>
+                                            <h4>Rp{{$detail->price}},-</h4>
+                                        </div>
+                                    </div>    
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <h1>Status Peminjaman</h1>
+                                            <h4>{{$detail->status}}</h4>
+                                        </div>
+                                    </div>                           
+                                </div> 
+                               
                 @endforeach
             <hr>
         </div>
     </div>
-   
 @endsection

@@ -11,6 +11,9 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    const ROLE_USER = '2';
+    const ROLE_ADMIN = '1';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,6 +34,9 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function role() {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

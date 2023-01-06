@@ -196,4 +196,12 @@ class MainController extends Controller
     {
        return view('main.list-katalog');
     }
+    public function listBlog()
+    {
+       return view('main.blog.blog');
+    }
+    public function detailBlog()
+    {
+       return view('main.blog.detail-blog');
+    }
 }

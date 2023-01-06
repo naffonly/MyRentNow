@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Redirect;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing');
 
 Auth::routes();
 
@@ -91,3 +91,5 @@ Route::get('/katalog-barang','MainController@katalogIndex')->name('katalog');
 Route::get('/tentang-kami','MainController@about')->name('about');
 Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog');
 Route::get('/list-katalog','MainController@listKatalog')->name('listKatalog');
+Route::get('/list-blog','MainController@listBlog')->name('listBlog');
+Route::get('/detail-blog','MainController@detailBlog')->name('detailBlog');

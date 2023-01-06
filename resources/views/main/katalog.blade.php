@@ -187,6 +187,28 @@
 
         <br>
 </main>
+
+<footer class="page-footer dark" style="background: #4DD8E8;">
+  <div class="container py-4" >
+      <div class="row" style="text-align: left;">
+          <div class="col">
+              <h5>RentNow</h5>
+              <p style="color: rgb(255,255,255);">RentNow adalah tempat penyewaan barang kebutuhan mahasiswa seperti laptop, tablet, handphone dan kamera dengan tujuan untuk memberikan solusi terbaik bagi customer kami.<br></p>
+          </div>
+          <div class="col">
+              <h5>Hubungi Kami</h5>
+              <p style="color: rgb(255,255,255);">xxxxx@rentnow.com<br></p>
+          </div>
+          <div class="col">
+              <h5>Media Sosial Kami</h5>
+              <p style="color: rgb(255,255,255);">@rent_now</p>
+              <p style="color: rgb(255,255,255);">08123xxxxxx</p>
+          </div>
+          
+      </div>
+  </div>
+</footer>
+
 <footer>
         <p>2022 RentNow - All rights reserved</p>
       </footer>

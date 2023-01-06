@@ -40,11 +40,11 @@
     <!-- Sidebar -->
     <ul class="navbar-nav bg-info shadow sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.overview') }}">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('landing') }}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img src="{{ asset('img/lgo.png') }}" alt="" width="50px">
             </div>
-            <div class="sidebar-brand-text mx-3">Rent NOw<sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Rent Now</div>
         </a>
 
         <!-- Divider -->

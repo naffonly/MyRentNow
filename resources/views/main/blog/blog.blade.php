@@ -25,110 +25,23 @@
                 </div>
             @endif
     </header>
+    <div class="container">
 <div class="row justify-content-center" style="margin: 120px 56px;">
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
+    @foreach($blog as $dblog)
+    <div class="col-4 mb-5" style="border-radius: 55px;width: 350px;">
+        <a class="nav-link  link-dark" href="{{ url('/detail-blog/'.$dblog->id.'') }}">
+        <div class="card text-center clean-card" style="border-radius: 55px;">
+            <img class="card-img-top w-100 d-block" src="{{ asset($dblog->image) }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px; height: 300px;" >
             <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
+                <h4 class="card-title" style="text-align: left;font-size: 30px;">{{substr($dblog->title,0,15)}}..<br></h4>
+                <p class="card-text" style="text-align: left;font-size: 22px;">{{substr($dblog->desk,0,100)}}...<br></p>
             </div>
         </div>
+        </a>
     </div>
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
+    @endforeach
+    
 </div>
-<div class="row justify-content-center" style="margin: 120px 56px;">
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row justify-content-center" style="margin: 120px 56px;">
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-4" style="border-radius: 55px;width: 350px;">
-        <div class="card text-center clean-card" style="border-radius: 55px;"><img class="card-img-top w-100 d-block" src="{{ asset('img/default.jpg') }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px;">
-            <div class="card-body info" style="box-shadow: 0px 1px 2px;border-bottom-right-radius: 55px;border-bottom-left-radius: 55px;">
-                <h4 class="card-title" style="text-align: left;font-size: 30px;">5 Spesifikasi Wajib di Smartphone Untuk Mainkan Game Grafis Berat<br></h4>
-                <div class="icons"><a href="#"><i class="material-icons">date_range</i></a>
-                    <p style="font-size: 18px;">10/12/2022</p>
-                </div>
-                <p class="card-text" style="text-align: left;font-size: 22px;">Untuk memainkan mobile game dengan grafis terbaik, gamer membutuhkan smartphone dengan spesifikasi dan fitur terbaik pula.<br></p>
-            </div>
-        </div>
-    </div>
 </div>
 <br>
     <footer class="page-footer dark" style="background: #4DD8E8;">

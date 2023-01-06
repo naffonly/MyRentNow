@@ -83,7 +83,7 @@ class ArticleController extends Controller
         ];
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'desk' => ['required', 'string', 'max:255'],
+            'desk' => ['required', 'string'],
             'imgArticle' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             
         ],
@@ -159,7 +159,7 @@ class ArticleController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:255',
-            'desk' => 'nullable|string|max:255',
+            'desk' => 'nullable|string',
             'imgArticle' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
            
         ]);

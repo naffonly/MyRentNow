@@ -92,4 +92,4 @@ Route::get('/tentang-kami','MainController@about')->name('about');
 Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog');
 Route::get('/list-katalog','MainController@listKatalog')->name('listKatalog');
 Route::get('/list-blog','MainController@listBlog')->name('listBlog');
-Route::get('/detail-blog','MainController@detailBlog')->name('detailBlog');
+Route::get('/detail-blog/{article}','MainController@detailBlog')->name('detailBlog');

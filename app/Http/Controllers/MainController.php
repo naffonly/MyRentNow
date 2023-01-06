@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -198,10 +199,13 @@ class MainController extends Controller
     }
     public function listBlog()
     {
-       return view('main.blog.blog');
+        $blog = Article::where('itsDelete',1)->get();
+       return view('main.blog.blog',compact('blog'));
     }
-    public function detailBlog()
+    public function detailBlog(Article $article)
     {
-       return view('main.blog.detail-blog');
+        $db = $article;
+        
+       return view('main.blog.detail-blog',compact('db'));
     }
 }

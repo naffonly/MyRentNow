@@ -149,7 +149,6 @@ class TransactionController extends Controller
             'pending' => $rs,
             'transaksi' => $trans,
             'product' => $product,
-            //...
         ];
        
         $request->validate([

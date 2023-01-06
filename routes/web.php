@@ -69,22 +69,25 @@ Route::group(['middleware' => ['auth','ceklogin:1']],function(){
 });
 
 
-
 Route::group(['middleware' => ['auth','ceklogin:2']],function(){
-Route::get('/dasboard', 'CustomerController@index')->name('dasboard');
-Route::get('/costumer-profile', 'CustomerController@customerProfil')->name('costumer');
-Route::put('/costumer-profile', 'CustomerController@profilUpdate')->name('costumer.update');
-Route::get('/customer-transaction/{transaction}','CustomerController@getCosTransaction')->name('getCosTransaction');
-Route::get('/getCostomerTransaction','CustomerController@getCostomerTransaction')->name('getCostomerTransaction');
-
+    Route::get('/costumer-profile', 'CustomerController@customerProfil')->name('costumer');
+    Route::put('/costumer-profile', 'CustomerController@profilUpdate')->name('costumer.update');
+    Route::get('/customer-transaction/{transaction}','CustomerController@getCosTransaction')->name('getCosTransaction');
+    Route::get('/getCostomerTransaction','CustomerController@getCostomerTransaction')->name('getCostomerTransaction');
+    Route::get('/dasboard', 'CustomerController@index')->name('dasboard');
 });
 
-
-Route::get('/getAllUsers','UserController@getAllUsers')->name('getAllUsers');
 Route::get('/getAllProducts','ProductController@getAllProducts')->name('getAllProducts');
 Route::get('/getAllArcticles','ArticleController@getAllArcticles')->name('getAllArcticles');
 Route::get('/getAllTransactions','TransactionController@getAllTransactions')->name('getAllTransactions');
+Route::get('/getAllUsers','UserController@getAllUsers')->name('getAllUsers');
 Route::get('/getAllTransactionsPending','TransactionController@getAllTransactionsPending')->name('getAllTransactionsPending');
 Route::get('/getAllTransactionsLoaned','TransactionController@getAllTransactionsLoaned')->name('getAllTransactionsLoaned');
 Route::get('/getAllTransactionsReturned','TransactionController@getAllTransactionsReturned')->name('getAllTransactionsReturned');
 Route::get('/getAllTransactionsLost','TransactionController@getAllTransactionsLost')->name('getAllTransactionsLost');
+
+
+Route::get('/katalog-barang','MainController@katalogIndex')->name('katalog');
+Route::get('/tentang-kami','MainController@about')->name('about');
+Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog');
+Route::get('/list-katalog','MainController@listKatalog')->name('listKatalog');

@@ -20,6 +20,7 @@ Route::get('/', function () {
 })->name('landing');
 
 Auth::routes();
+Route::get('/', 'MainController@index')->name('landing');
 
 Route::group(['middleware' => ['auth','ceklogin:1']],function(){
     Route::get('/home', 'HomeController@index')->name('home');

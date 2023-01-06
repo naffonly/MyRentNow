@@ -17,6 +17,8 @@ class MainController extends Controller
     public function index()
     {
         //
+        $blog = Article::where('itsDelete',1,)->orderBy('id','desc')->limit(3)->get();
+        return view('welcome',compact('blog'));
     }
 
     /**

@@ -91,7 +91,6 @@ Route::get('/getAllTransactionsLost','TransactionController@getAllTransactionsLo
 
 Route::get('/katalog-barang','MainController@katalogIndex')->name('katalog');
 Route::get('/tentang-kami','MainController@about')->name('about');
-Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog');
 Route::get('/list-blog','MainController@listBlog')->name('listBlog');
 Route::get('/detail-blog/{article}','MainController@detailBlog')->name('detailBlog');
 
@@ -103,3 +102,8 @@ Route::get('/laptop-katalog','MainController@laptopKatalog')->name('laptopKatalo
 Route::get('/ipad-katalog','MainController@ipadKatalog')->name('ipadKatalog');
 Route::get('/proyektor-katalog','MainController@proyektorKatalog')->name('proyektorKatalog');
 Route::get('/detail-katalog/{id}','MainController@detailKatalog')->name('detailKatalog');
+
+
+
+
+Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog')->middleware('auth');

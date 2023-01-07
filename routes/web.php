@@ -76,6 +76,7 @@ Route::group(['middleware' => ['auth','ceklogin:2']],function(){
     Route::get('/customer-transaction/{transaction}','CustomerController@getCosTransaction')->name('getCosTransaction');
     Route::get('/getCostomerTransaction','CustomerController@getCostomerTransaction')->name('getCostomerTransaction');
     Route::get('/dasboard', 'CustomerController@index')->name('dasboard');
+    Route::post('/store-rent','TransactionController@rent')->name('transaction.rent');
 });
 
 Route::get('/getAllProducts','ProductController@getAllProducts')->name('getAllProducts');
@@ -91,6 +92,14 @@ Route::get('/getAllTransactionsLost','TransactionController@getAllTransactionsLo
 Route::get('/katalog-barang','MainController@katalogIndex')->name('katalog');
 Route::get('/tentang-kami','MainController@about')->name('about');
 Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog');
-Route::get('/list-katalog','MainController@listKatalog')->name('listKatalog');
 Route::get('/list-blog','MainController@listBlog')->name('listBlog');
 Route::get('/detail-blog/{article}','MainController@detailBlog')->name('detailBlog');
+
+
+
+Route::get('/kamera-katalog','MainController@kameraKatalog')->name('kameraKatalog');
+Route::get('/ht-katalog','MainController@htKatalog')->name('htKatalog');
+Route::get('/laptop-katalog','MainController@laptopKatalog')->name('laptopKatalog');
+Route::get('/ipad-katalog','MainController@ipadKatalog')->name('ipadKatalog');
+Route::get('/proyektor-katalog','MainController@proyektorKatalog')->name('proyektorKatalog');
+Route::get('/detail-katalog/{id}','MainController@detailKatalog')->name('detailKatalog');

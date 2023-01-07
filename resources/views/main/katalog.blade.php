@@ -37,9 +37,10 @@
           <div class="container">
             <div class="row">
             @foreach($camera as $pCamera)
+           
               
               <div class="col">
-             
+                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pCamera->id.'') }}">  
                 <div class="row m-1">
                     <div class="card">
                       <img src="{{ asset($pCamera->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
@@ -48,14 +49,16 @@
                     </div>
                   </div>  
                 </div>
+              </a>
               </div>
+           
               @endforeach
               </div>
             </div>
             <br>
             <div class="container">
                 <div class="d-grid gap-2">
-                    <a  class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
+                    <a href="{{ route('kameraKatalog') }}" class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
                 </div>
             </div>
         </div>
@@ -70,7 +73,7 @@
             @foreach($ipad as $pIpad)
               
               <div class="col">
-             
+                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pIpad->id.'') }}">  
                 <div class="row m-1">
                     <div class="card">
                       <img src="{{ asset($pIpad->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
@@ -79,6 +82,7 @@
                     </div>
                   </div>  
                 </div>
+                </a>
               </div>
               @endforeach
               </div>
@@ -86,7 +90,7 @@
             <br>
             <div class="container">
                 <div class="d-grid gap-2">
-                    <a  class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
+                    <a href="{{ route('ipadKatalog') }}" class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
                 </div>
             </div>
         </div>
@@ -101,7 +105,7 @@
             @foreach($laptop as $lp)
               
               <div class="col">
-             
+                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$lp->id.'') }}">  
                 <div class="row m-1">
                     <div class="card">
                       <img src="{{ asset($lp->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
@@ -110,6 +114,7 @@
                     </div>
                   </div>  
                 </div>
+                </a>
               </div>
               @endforeach
               </div>
@@ -117,7 +122,7 @@
             <br>
             <div class="container">
                 <div class="d-grid gap-2">
-                    <a  class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
+                    <a href="{{ route('laptopKatalog') }}" class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
                 </div>
             </div>
         </div>
@@ -132,7 +137,7 @@
             @foreach($proyektor as $py)
               
               <div class="col">
-             
+                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$py->id.'') }}">  
                 <div class="row m-1">
                     <div class="card">
                       <img src="{{ asset($py->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
@@ -141,6 +146,7 @@
                     </div>
                   </div>  
                 </div>
+                </a>
               </div>
               @endforeach
               </div>
@@ -148,7 +154,7 @@
             <br>
             <div class="container">
                 <div class="d-grid gap-2">
-                    <a  class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
+                    <a  href="{{ route('proyektorKatalog') }}" class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
                 </div>
             </div>
         </div>
@@ -163,7 +169,7 @@
             @foreach($ht as $pht)
               
               <div class="col">
-             
+                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pht->id.'') }}">  
                 <div class="row m-1">
                     <div class="card">
                       <img src="{{ asset($pht->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
@@ -172,6 +178,7 @@
                     </div>
                   </div>  
                 </div>
+                </a>
               </div>
               @endforeach
               </div>
@@ -179,7 +186,7 @@
             <br>
             <div class="container">
                 <div class="d-grid gap-2">
-                    <a  class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
+                    <a href="{{ route('htKatalog') }}" class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Produk Lainnya</a>
                 </div>
             </div>
         </div>

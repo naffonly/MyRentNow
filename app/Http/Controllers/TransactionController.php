@@ -120,7 +120,7 @@ class TransactionController extends Controller
         $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
         $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
         $widget = [
-            'users' => $users,
+            'users' => $allusers,
             'pending' => $rs,
             'transaksi' => $trans,
             'product' => $product,
@@ -180,7 +180,57 @@ class TransactionController extends Controller
             'status'=> 1,
         ];
         DB::table('transactions')->insert($product);
+
         return view('admin.transaction.daftar-transaction', compact('widget'));
+    }
+    
+    public function rent(Request $request)
+    {
+        //
+        // dd($request);
+        $users = User::where('itsDelete',1)->get()->count();
+        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $product = Product::where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
+        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
+        $widget = [
+            'users' => $users,
+            'pending' => $rs,
+            'transaksi' => $trans,
+            'product' => $product,
+        ];
+       
+        $request->validate([
+            'idPeminjam' => ['required', 'integer'],
+            'idProduct' => ['required', 'integer'],
+            'dateIn' => ['required'],
+            'dateOut' => ['required'],
+        ],
+        [
+            'idPeminjam.required' => 'Pilih Peminjam Terlebih dahulu',
+            'idProduct.required' => 'Pilih Barang Terlebih dahulu',
+            'dateIn.required' => 'pilihlah waktu pengambilan barang Terlebih dahulu',
+            'dateOut.required' => 'Pilihlah waktu kembali barang Terlebih dahulu'
+        ]);
+
+        $products = Product::find($request->idProduct);
+        $dataIn = new Carbon($request->dateIn);
+        $dataOut = new Carbon($request->dateOut);
+        $hari = $dataIn->diff($dataOut)->days;
+        $harga = $hari * $products->priceProduct;
+       
+        $product =[
+            'idPeminjam' => $request->idPeminjam,
+            'idProduct' => $request->idProduct,
+            'dateIn' => $request->dateIn,
+            'dateOut' => $request->dateOut,
+            'priceRent' => $harga,
+            'itsDelete' => 1,
+            'status'=> 1,
+        ];
+        DB::table('transactions')->insert($product);
+
+        return view('customer.customer-overview', compact('widget'));
     }
 
     /**

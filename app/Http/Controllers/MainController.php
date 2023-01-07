@@ -182,7 +182,7 @@ class MainController extends Controller
         
         return view('main.katalog',compact('camera','ipad','laptop','proyektor','ht'));
     }
-
+    
     public function about()
     {
         # code...
@@ -191,14 +191,85 @@ class MainController extends Controller
         return view('main.about');
     }
 
-    public function detailKatalog()
+    public function detailKatalog($id)
     {
-        return view('main.detail-katalog');
+       
+        
+        
+          
+            $newInOne = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('p.id','=', rand(1,10))
+            ->orderBy('id', 'desc')
+            ->limit(3)
+            ->get();
+
+            $newInTwo = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('p.id','=', rand(11,20))
+            ->orderBy('id', 'desc')
+            ->limit(3)
+            ->get();
+
+            $newInThree = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('p.id','=', rand(21,30))
+            ->orderBy('id', 'desc')
+            ->limit(3)
+            ->get();
+       
+        $product = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('p.id','=',$id)
+            ->orderBy('id', 'asc')
+            ->get();
+        return view('main.katalog.detail-katalog',compact('product','newInOne','newInTwo','newInThree'));
     }
-    public function listKatalog()
-    {
-       return view('main.list-katalog');
-    }
+
     public function listBlog()
     {
         $blog = Article::where('itsDelete',1)->get();
@@ -210,4 +281,108 @@ class MainController extends Controller
         
        return view('main.blog.detail-blog',compact('db'));
     }
+
+    public function kameraKatalog()
+    {
+
+        $cameras = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('categoryId','=',4)
+            ->orderBy('id', 'asc')
+            ->get();
+
+       return view('main.katalog.camera-katalog',compact('cameras'));
+    }
+    public function htKatalog()
+    {
+        $hts = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('categoryId','=',2)
+            ->orderBy('id', 'asc')
+            ->get();
+       return view('main.katalog.ht-katalog',compact('hts'));
+    }
+    public function laptopKatalog()
+    {
+        $laptops = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('categoryId','=',1)
+            ->orderBy('id', 'asc')
+            ->get();
+       return view('main.katalog.laptop-katalog',compact('laptops'));
+    }
+    public function proyektorKatalog()
+    {
+        $proyektors = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('categoryId','=',5)
+            ->orderBy('id', 'asc')
+            ->get();
+       return view('main.katalog.proyektor-katalog',compact('proyektors'));
+    }
+    public function ipadKatalog()
+    {
+        $ipads = DB::table('products as p')
+            ->select(
+                'p.id as id',
+                'p.nameProduct as nameP',
+                'p.spekProduct as spekP',
+                'p.imgProduct as imgP',
+                'p.priceProduct as priceP',
+                'p.stockProduct as stockP', 
+                'p.categoryId as categoryId',
+                'cp.nameCategory as nameC',   
+                )
+            ->join('categoryproduct as cp','cp.id','=','categoryId')
+            ->where('itsDelete','=','1')
+            ->where('categoryId','=',3)
+            ->orderBy('id', 'asc')
+            ->get();
+       return view('main.katalog.ipad-katalog',compact('ipads'));
+    }
+  
 }

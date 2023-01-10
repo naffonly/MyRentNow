@@ -2,7 +2,7 @@
 @section('main-content')
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3  border-bottom">
     <a class="navbar-brand ms-3 text-dark" href="{{ route('landing') }}" >
-        <img src="{{ asset('img/logo.png') }}" alt="" width="30" height="24" class="d-inline-block align-text-top ms-5">
+        <img src="{{ asset('img/logo.png') }}" alt="" width="30" height="24" class="d-inline-block align-text-top">
             RentNow</a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -35,7 +35,7 @@
             </div>
         </div>
         </section>
-        <section class="d-xxl-flex justify-content-center  features">
+        <section class="d-xxl-flex justify-content-center g features">
             <div class="container justify-content-center" style="margin-right: 0;margin-left: 0px;">
                 <div class="block-heading"></div>
                 <div class="row align-items-center ">

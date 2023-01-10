@@ -28,12 +28,56 @@
     <section class="clean-block clean-post dark">
         <div class="container">
             <div class="block-content">
-                <div class="post-body">
+                <div class="post-body pt-2">
                 <h1 class="text-center">FAQ</h1>
                 <br>
                     
-                    <br>
-                    <p style="text-align: justify">suu</p>
+                <br>
+                <div class="d-flex p-3">
+                <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg></div><h3 class="mx-3">Bagaimana cara menyewa barang di RentNow?</h3></div>
+                <p style="text-align: justify"> <ol>
+                    <li>Buat akun terlebih dahulu</li>
+                    <li>Klik menu katalog untuk memilih barang yang akan di sewa</li>
+                    <li>Klik produk yang diinginkan</li>
+                    <li>Klik tombol "Sewa"</li>
+                    <li>Masukan tanggal mulai sewa dan tanggal di kembalikan</li>
+                    <li>klik tombol konfirmasi "Sewa"</li>
+                    <li>Kemudian tunggu barang di konfirmasi oleh Admin</li>
+                </ol>
+                  </p>
+                
+                <div class="d-flex p-3">
+                <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg></div><h3 class="mx-3" >Apakah saya bisa order melalui media sosial?</h3></div>
+                <p style="text-align: justify"><ul><li>Tidak, kami hanya tersedia lewat website RentNow</li></ul></p>
+                
+                <div class="d-flex p-3">
+                <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg></div><h3 class="mx-3">Bagaimana jika saya ingin mengembalikan barang lebih awal?</h3></div>
+                <p style="text-align: justify"><ul><li>Tidak Bisa, anda harus mingikuti komitmen tanggal yang sudah anda tetapkan sebelumnya</li></ul>
+                </p>
+                
+                <div class="d-flex p-3">
+                <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg></div><h3 class="mx-3">Wilayah mana saja yang menjadi cakupan RentNow?</h3></div>
+                <p style="text-align: justify"><ul><li>Bandung</li></ul></p>
+                
+                <div class="d-flex p-3">
+                <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg></div><h3 class="mx-3">Apakah barang dapat dimput sendiri?</h3></div>
+                <p style="text-align: justify"><ul><li>Bisa, lebih baik dan disarankan barang di ambil ke toko untuk meminimalisir kerusakan pada saat perjalanan</li></ul></p>
+               
+                <div class="d-flex p-3">
+                <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                </svg></div><h3 class="mx-3"> Apakah barang yang dikirimkan dalam keadaan bersih?</h3></div>
+                <p style="text-align: justify"><ul><li>Iya, sebelum produk dikirimkan kepada pelanggan sudah dipastikan dalam keadaan baik dan bersih</li></ul></p>
                 </div>
             </div>
         </div>

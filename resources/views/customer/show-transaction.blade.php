@@ -37,7 +37,7 @@
                                     @if (!file_exists(Auth::user()->indetityFace))
                                     <div class="col-4 ">
                                         <div class="card-body">
-                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset('img/idenFD.png') }}" alt="Responsive image"></img>
+                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset('img/idenCD.png') }}" alt="Responsive image"></img>
                                            </div>
                                            <div class="card-header text-center">
                                           <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
@@ -45,7 +45,7 @@
                                        </div>
                                        <div class="col-4">
                                        <div class="card-body">
-                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset('img/idenCD.png') }}" alt="Responsive image"></img>
+                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset('img/idenFD.png') }}" alt="Responsive image"></img>
                                            </div>
                                            <div class="card-header text-center">
                                           <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->name}}</h5>

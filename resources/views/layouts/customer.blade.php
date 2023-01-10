@@ -40,7 +40,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('landing') }}">
             <div class="sidebar-brand-icon rotate-n-15">
-                <img src="{{ asset('img/lgo.png') }}" alt="" width="50px">
+                <img src="{{ asset('img/dlgo.png') }}" alt="" width="50px">
             </div>
             <div class="sidebar-brand-text mx-3">Rent Now</div>
         </a>

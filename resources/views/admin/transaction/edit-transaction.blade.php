@@ -34,30 +34,58 @@
                                 @endif
                         @foreach($data as $detail)
                                 <div class="row ">
+                                    @if (!file_exists($detail->indenF))
                                     <div class="col-4 ">
                                     
-                                     <div class="card-body">
-                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->indenF) }}" alt="Responsive image"></img>
-                                        </div>
-                                        <div class="card-header text-center">
-                                       <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
-                                     </div>
-                                    </div>
-                                    <div class="col-4">
-                                    <div class="card-body">
-                                        <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->indenC) }}" alt="Responsive image"></img>
-                                        </div>
-                                        <div class="card-header text-center">
-                                       <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->name}}</h5>
-                                     </div></div>
-                                    <div class="col-4">
                                         <div class="card-body">
-                                            <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->imgP) }}" alt="Responsive image"></img>
+                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset('img/idenFD.png') }}" alt="Responsive image"></img>
+                                           </div>
+                                           <div class="card-header text-center">
+                                          <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
                                         </div>
-                                        <div class="card-header text-center">
-                                            <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->nProduct}}</h5>
+                                       </div>
+                                       <div class="col-4">
+                                       <div class="card-body">
+                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset('img/idenCD.png') }}" alt="Responsive image"></img>
+                                           </div>
+                                           <div class="card-header text-center">
+                                          <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->name}}</h5>
+                                        </div></div>
+                                       <div class="col-4">
+                                           <div class="card-body">
+                                               <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->imgP) }}" alt="Responsive image"></img>
+                                           </div>
+                                           <div class="card-header text-center">
+                                               <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->nProduct}}</h5>
+                                           </div>
+                                       </div>
+                                    @else
+                                    <div class="col-4 ">
+                                    
+                                        <div class="card-body">
+                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->indenF) }}" alt="Responsive image"></img>
+                                           </div>
+                                           <div class="card-header text-center">
+                                          <h5 class="text-uppercase" style="font-weight: bold;">Kartu KTP</h5>
                                         </div>
-                                    </div>
+                                       </div>
+                                       <div class="col-4">
+                                       <div class="card-body">
+                                           <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->indenC) }}" alt="Responsive image"></img>
+                                           </div>
+                                           <div class="card-header text-center">
+                                          <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->name}}</h5>
+                                        </div></div>
+                                       <div class="col-4">
+                                           <div class="card-body">
+                                               <img  class="img-thumbnail rounded" style="font-size: 60px; height: 420px; width: 100%;" src="{{ asset($detail->imgP) }}" alt="Responsive image"></img>
+                                           </div>
+                                           <div class="card-header text-center">
+                                               <h5 class="text-uppercase" style="font-weight: bold;">{{$detail->nProduct}}</h5>
+                                           </div>
+                                       </div>
+                                    @endif
+                                    
                                 </div>
                               <br>
                                 <div class="row">

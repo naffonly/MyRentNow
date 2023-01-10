@@ -28,7 +28,7 @@
     <div class="container">
 <div class="row justify-content-center" style="margin: 120px 56px;">
     @foreach($blog as $dblog)
-    <div class="col-4 mb-5" style="border-radius: 55px;width: 350px;">
+    <div class="col-4 mb-5" style="border-radius: 55px;width: 390px;">
         <a class="nav-link  link-dark" href="{{ url('/detail-blog/'.$dblog->id.'') }}">
         <div class="card text-center clean-card" style="border-radius: 55px;">
             <img class="card-img-top w-100 d-block" src="{{ asset($dblog->image) }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px; height: 300px;" >

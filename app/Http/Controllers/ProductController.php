@@ -85,7 +85,7 @@ class ProductController extends Controller
         ];
         $request->validate([
             'nameProduct' => ['required', 'string', 'max:255'],
-            'spekProduct' => ['required', 'string', 'max:255'],
+            'spekProduct' => ['required', 'string'],
             'imgProduct' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'priceProduct' => ['required', 'string'],
             'stockProduct' => ['required', 'string'],
@@ -168,7 +168,7 @@ class ProductController extends Controller
 
         $request->validate([
             'nameProduct' => 'required|string|max:255',
-            'spekProduct' => 'nullable|string|max:255',
+            'spekProduct' => 'nullable|string',
             'categoryProduct' => 'required|string|max:255',
             'imgProduct' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'priceProduct' => 'required',

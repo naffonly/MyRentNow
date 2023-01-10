@@ -25,12 +25,12 @@
                 </div>
             @endif
     </header>
-<div class="hero py-5">
-    <div class="container p-5">
-        <div class="p-5">
-    <h1 class="fw-bold text-white text-center mt-5">TENTANG KAMI</h1>
+<div class="hero">
+    <div class="container d-flex align-items-center" style="height: 80%">
+        <div class="" >
+    <h1 class="fw-bold text-white text-center ">TENTANG KAMI</h1>
     <h3 class="fw-normal text-white text-center">VISI DAN MISI</h3>
-    <div class="px-5">
+    <div class="container">
     <p class="lh-lg text-white px-5 text-wrap" style="text-align: center;">Menyediakan pelayanan berkualitas yang melebihi
 
 ekspektasi dari pelanggan terhormat kami.
@@ -51,7 +51,7 @@ inovasi dan teknologi mutakhir</p>
         <br>
         <div class="container">
                 <div class="d-grid gap-2">
-                    <a  class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" style>Hubungi</a>
+                    <a  class="btn text-white btn-lg btn-block border-item" target="_blank" href="https://api.whatsapp.com/send?phone=62876543456&text=Hallo%20Admin%20RentNow%20saya%20ingin%20konsultasi" style="background-color:#4DD8E8;" style>Hubungi</a>
                 </div>
             </div>
 </div>
@@ -77,6 +77,6 @@ inovasi dan teknologi mutakhir</p>
     </div>
 </footer>
 
-<footer class="mt-5">
+<footer >
         <p>2022 RentNow - All rights reserved</p>
 </footer>

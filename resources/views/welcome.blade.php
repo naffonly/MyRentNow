@@ -27,31 +27,33 @@
     </header>
     <main class="page landing-page">
         
-        <section class="clean-block clean-hero bg-section mb-5" style="height: 60%;">
-            <div class="text text-white container text-center" style="padding-top:150px; ">
-                <h2 style="font-size: 48px;padding-bottom: 0px;margin-bottom: 0px;">Solusi Mahasiswa&nbsp;Untuk&nbsp;<br></h2>
-                <h2 style="font-size: 48px;padding-bottom: 0px;">Menunjang Perkuliahan<br></h2><button class="btn btn-outline-light btn-lg" type="button" style="background: #4DD8E8;width: 249px;height: 50px;border-radius: 14px;font-size: 22px;font-weight: bold;">Sewa<br></button>
+        <section class="clean-block clean-hero bg-section mb-5" style="height: 80%;">
+            <div class="container  d-flex align-items-center">
+                <div class="container text-center text text-white ">
+                <h2 style="font-size: 48px;">Solusi Mahasiswa&nbsp;Untuk&nbsp;<br></h2>
+                <h2 style="font-size: 48px;">Menunjang Perkuliahan<br></h2><a href="{{ route('katalog') }}" class="btn btn-outline-light btn-lg" type="button" style="background: #4DD8E8;width: 249px;height: 50px;border-radius: 14px;font-size: 22px;font-weight: bold;">Sewa<br></a>
             </div>
+        </div>
         </section>
         <section class="d-xxl-flex justify-content-xxl-center clean-block features">
-            <div class="container" style="margin-right: 0;margin-left: 0px;">
+            <div class="container justify-content-center" style="margin-right: 0;margin-left: 0px;">
                 <div class="block-heading"></div>
-                <div class="row align-items-center">
-                    <div class="col-md-6">
+                <div class="row align-items-center ">
+                    <div class="col-md-6 mb-5 ">
                         <h3 style="font-size: 30px;font-weight: bold;">Layanan Konsultasi Kami Adalah Yang Terbaik<br></h3>
                         <div class="getting-started-info">
                             <p style="font-size: 20px;">Customer tidak perlu khawatir tentang spesifikasi alat yang diperlukan untuk menyelesaikan perkerjaannya, kami menyediakan layanan konsultasi selama 24 jam.<br></p>
-                        </div><button class="btn btn-outline-primary btn-lg" type="button" style="background: #4DD8E8;width: 240px;min-height: 45px;font-weight: bold;color: rgb(255,255,255);border-style: none;">Hubungi<br></button>
+                        </div><a target="_blank" href="https://api.whatsapp.com/send?phone=62876543456&text=Hallo%20Admin%20RentNow%20saya%20ingin%20konsultasi"><button class="btn btn-outline-primary btn-lg" type="button" style="background: #4DD8E8;width: 240px;min-height: 45px;font-weight: bold;color: rgb(255,255,255);border-style: none;">Hubungi<br></button></a>
                     </div>
-                    <div class="col-md-6"><img class="img-thumbnail" src="{{ asset('img/default.jpg') }}" style="border-radius: 47px;"></div>
+                    <div class="col-md-6 "><img class="img-thumbnail" src="{{ asset('img/konsul.png') }}" style="border-radius: 47px;"></div>
                 </div>
                 <div class="row align-items-center" style="padding-top: 65px;">
-                    <div class="col-md-6"><img class="img-thumbnail" src="{{ asset('img/default.jpg') }}" style="border-radius: 47px;"></div>
+                    <div class="col-md-6 mb-5"><img class="img-thumbnail" src="{{ asset('img/konsul2.png') }}" style="border-radius: 47px;"></div>
                     <div class="col-md-6">
                         <h3 style="font-size: 30px;font-weight: bold;">Kemudahan Dalam Mencari Alat Sesuai Kategori<br></h3>
                         <div class="getting-started-info">
                             <p style="font-size: 20px;">Kami menyediakan fitur pengkategorian alat sesuai jenis-jenis kebutuhan customer.<br></p>
-                        </div><button class="btn btn-outline-primary btn-lg" type="button" style="background: #4DD8E8;width: 240px;min-height: 45px;font-weight: bold;color: rgb(255,255,255);border-style: none;">Hubungi<br></button>
+                        </div><a target="_blank" href="https://api.whatsapp.com/send?phone=62876543456&text=Hallo%20Admin%20RentNow%20saya%20ingin%20konsultasi"><button class="btn btn-outline-primary btn-lg" type="button" style="background: #4DD8E8;width: 240px;min-height: 45px;font-weight: bold;color: rgb(255,255,255);border-style: none;">Hubungi<br></button></a>
                     </div>
                 </div>
             </div>
@@ -130,7 +132,7 @@
                 <br>
                 <div class="row justify-content-center">
                     @foreach($blog as $dblog)
-                    <div class="col-4 mb-5" style="border-radius: 55px;width: 350px;">
+                    <div class="col-4 mb-5" style="border-radius: 55px;width: 400px;">
                         <a class="nav-link  link-dark" href="{{ url('/detail-blog/'.$dblog->id.'') }}">
                         <div class="card text-center clean-card" style="border-radius: 55px;">
                             <img class="card-img-top w-100 d-block" src="{{ asset($dblog->image) }}"  style="border-top-left-radius: 55px;border-top-right-radius: 55px; height: 300px;" >

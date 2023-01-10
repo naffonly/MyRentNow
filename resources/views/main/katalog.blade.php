@@ -38,18 +38,13 @@
             <div class="row">
             @foreach($camera as $pCamera)
            
-              
               <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pCamera->id.'') }}">  
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($pCamera->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$pCamera->nameP}}</h5></center> 
-                    </div>
-                  </div>  
+                <div class="card" >
+                <img src="{{ asset($pCamera->imgP) }}" class="card-img-top" width="400px" alt="...">
+                  <div class="card-body text-white" style="background-color:#4DD8E8">
+                    <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$pCamera->id.'') }}"> <h5 class="card-title text-center">{{$pCamera->nameP}}</h5></a>
+                  </div>
                 </div>
-              </a>
               </div>
            
               @endforeach
@@ -72,18 +67,15 @@
             <div class="row">
             @foreach($ipad as $pIpad)
               
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pIpad->id.'') }}">  
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($pIpad->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$pIpad->nameP}}</h5></center> 
-                    </div>
-                  </div>  
+            <div class="col">
+              <div class="card" >
+              <img src="{{ asset($pIpad->imgP) }}" class="card-img-top" width="400px" alt="...">
+                <div class="card-body text-white" style="background-color:#4DD8E8">
+                  <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$pIpad->id.'') }}"> <h5 class="card-title text-center">{{$pIpad->nameP}}</h5></a>
                 </div>
-                </a>
               </div>
+            </div>
+
               @endforeach
               </div>
             </div>
@@ -104,18 +96,14 @@
             <div class="row">
             @foreach($laptop as $lp)
               
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$lp->id.'') }}">  
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($lp->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$lp->nameP}}</h5></center> 
-                    </div>
-                  </div>  
+            <div class="col">
+              <div class="card" >
+              <img src="{{ asset($lp->imgP) }}" class="card-img-top" width="400px" alt="...">
+                <div class="card-body text-white" style="background-color:#4DD8E8">
+                  <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$lp->id.'') }}"> <h5 class="card-title text-center">{{$lp->nameP}}</h5></a>
                 </div>
-                </a>
               </div>
+            </div>
               @endforeach
               </div>
             </div>
@@ -136,18 +124,15 @@
             <div class="row">
             @foreach($proyektor as $py)
               
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$py->id.'') }}">  
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($py->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$py->nameP}}</h5></center> 
-                    </div>
-                  </div>  
+            <div class="col">
+              <div class="card" >
+              <img src="{{ asset($py->imgP) }}" class="card-img-top" width="400px" alt="...">
+                <div class="card-body text-white" style="background-color:#4DD8E8">
+                  <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$py->id.'') }}"> <h5 class="card-title text-center">{{$py->nameP}}</h5></a>
                 </div>
-                </a>
               </div>
+            </div>
+
               @endforeach
               </div>
             </div>
@@ -168,18 +153,15 @@
             <div class="row">
             @foreach($ht as $pht)
               
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pht->id.'') }}">  
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($pht->imgP) }}" width="400px" style="height: 400px; transform: scale(0.7);" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$pht->nameP}}</h5></center> 
-                    </div>
-                  </div>  
+            <div class="col">
+              <div class="card" >
+              <img src="{{ asset($pht->imgP) }}" class="card-img-top" width="400px" alt="...">
+                <div class="card-body text-white" style="background-color:#4DD8E8">
+                  <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$pht->id.'') }}"> <h5 class="card-title text-center">{{$pht->nameP}}</h5></a>
                 </div>
-                </a>
               </div>
+            </div>
+
               @endforeach
               </div>
             </div>

@@ -31,21 +31,17 @@
 </div>
             <hr>
             <div class="container">
-            <div class="row row-cols-3">
+            <div class="row">
               <!-- kamera1 -->
               @foreach($ipads as $ipad)
-              <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$ipad->id.'') }}">
-              <div class="col">
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($ipad->imgP) }}" width="400px" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$ipad->nameP}}</h5></center> 
-                    </div>
+              <div class="col-4 mb-3">
+                <div class="card" >
+                  <img src="{{ asset($ipad->imgP) }}" class="card-img-top" width="400px" alt="...">
+                  <div class="card-body text-white" style="background-color:#4DD8E8">
+                    <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$ipad->id.'') }}"> <h5 class="card-title text-center">{{$ipad->nameP}}</h5></a>
                   </div>
-                </div>
-              </div>
-              </a>
+            </div>
+          </div>
               @endforeach
               </div>
 

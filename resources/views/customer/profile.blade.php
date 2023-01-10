@@ -28,12 +28,21 @@
         <div class="col-lg-4 order-lg-2">
 
             <div class="card shadow mb-4">
+                @if (!file_exists(Auth::user()->indetityCard))
+                <div class="card-profile-image mt-4">
+                    <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset('img/idenCD.png' ) }}" width="300px" >
+                </div>
+                <div class="card-profile-image mt-4">
+                    <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset('img/idenFD.png') }}" width="300px" >
+                </div>
+           @else
                 <div class="card-profile-image mt-4">
                     <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset(Auth::user()->indetityCard ) }}" width="300px" >
-                 </div>
-                <div class="card-profile-image mt-4">
-                     <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset(Auth::user()->indetityFace ) }}" width="300px" >
                 </div>
+                <div class="card-profile-image mt-4">
+                    <img  class="rounded-circle avatar avatar font-weight-bold" style="font-size: 60px; height: 180px; width: 180px;"  src="{{ asset(Auth::user()->indetityFace ) }}" width="300px" >
+                </div>
+            @endif
                 <div class="card-body">
 
                     <div class="row">

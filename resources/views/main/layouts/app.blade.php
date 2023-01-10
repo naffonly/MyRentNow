@@ -21,6 +21,9 @@
         .bg-section{
             background-image: url("{{ asset('img/welcomepage.png') }}") 
         }
+        .btn-outline-info{
+            color: #0dcaf0;
+        }
         .btn-outline-info:hover{
             color: white;
         }
@@ -39,6 +42,10 @@
             width: 100%;
             background-image: url("{{asset('img/about.png') }}");
             background-repeat: no-repeat;
+        }
+        .btn-outline-light:hover {
+        background: #0eabbd;
+        color: white;
         }
     </style>
     <!-- Favicons -->

@@ -109,7 +109,12 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                            @if (!file_exists(Auth::user()->indetityFace))
+                            <img src="{{ asset('img/idenFD.png') }}" class="img-profile rounded-circle avatar font-weight-bold">
+                            @else
                             <img src="{{ asset(Auth::user()->indetityFace ) }}" class="img-profile rounded-circle avatar font-weight-bold" data-initial="{{ Auth::user()->name[0] }}">
+                            @endif
+                            
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -145,7 +150,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Alejandro RH {{ now()->year }}</span>
+                    <span>RentNow &copy; Sewa Barang Elektronik {{ now()->year }}</span>
                 </div>
             </div>
         </footer>

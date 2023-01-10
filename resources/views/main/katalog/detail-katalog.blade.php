@@ -35,12 +35,12 @@
         
           <br><br>
           <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <img src="{{ asset($item->imgP) }}" width="400px" class="img-fluid" alt="...">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <img src="{{ asset($item->imgP) }}" class="img-fluid mb-5" alt="...">
               </div>
               
-              <div class="col-sm">
+              <div class="col-md-6">
                <h2 class="fw-bold">{{$item->nameP}}</h2>
                 <p>{{$item->spekP}}</p>
 
@@ -50,7 +50,7 @@
                 <div class="container-fluid">
                 <div class="d-grid gap-2">
                 <button type="button" class="btn text-white btn-lg btn-block border-item" style="background-color:#4DD8E8;" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">SEWA</button>
-                
+              
                 <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -61,7 +61,7 @@
                       <div class="modal-body">
                         <form method="POST" action="{{ route('transaction.rent') }}" autocomplete="off"  enctype="multipart/form-data">
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                          <input type="hidden" name="idPeminjam" value="{{Auth::id()}}">
+                          <input type="hidden" name="idPeminjam" value="{{Auth::user()?->id}}">
                           <input type="hidden" name="idProduct" value="{{$item->id}}">
                           
                           <div class="row">
@@ -95,7 +95,7 @@
                   </div>
                 </div>
                 </div>
-            </div>
+              </div>
               </div>
             </div>
           </div>
@@ -103,56 +103,44 @@
 
           <!-- Deatail-->
           <br><br>
+          <div class="container">
             <h2 class="ml-4">Barang Rekomendasi</h2>
+          </div>
             <hr>
             <div class="container">
             <div class="row">
               <!-- kamera1 -->
               @foreach ($newInOne as $pd)
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pd->id.'') }}">
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($pd->imgP) }}" width="400px" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$pd->nameP}}</h5></center> 
-                    </div>
+              <div class="col-4 mb-3">
+                <div class="card" >
+                  <img src="{{ asset($pd->imgP) }}" class="card-img-top" width="400px" alt="...">
+                  <div class="card-body text-white" style="background-color:#4DD8E8">
+                    <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$pd->id.'') }}"> <h5 class="card-title text-center">{{$pd->nameP}}</h5></a>
                   </div>
-                </div>
-              </a>
             </div>
+          </div>
               @endforeach
               @foreach ($newInTwo as $pd)
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pd->id.'') }}">
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($pd->imgP) }}" width="400px" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$pd->nameP}}</h5></center> 
-                    </div>
+              <div class="col-4 mb-3">
+                <div class="card" >
+                  <img src="{{ asset($pd->imgP) }}" class="card-img-top" width="400px" alt="...">
+                  <div class="card-body text-white" style="background-color:#4DD8E8">
+                    <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$pd->id.'') }}"> <h5 class="card-title text-center">{{$pd->nameP}}</h5></a>
                   </div>
-                </div>
-              </a>
             </div>
+          </div>
               @endforeach
               @foreach ($newInThree as $pd)
-              <div class="col">
-                <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$pd->id.'') }}">
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($pd->imgP) }}" width="400px" class="img-fluid" alt="...">
-                      <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$pd->nameP}}</h5></center> 
-                    </div>
+              <div class="col-4 mb-3">
+                <div class="card" >
+                  <img src="{{ asset($pd->imgP) }}" class="card-img-top" width="400px" alt="...">
+                  <div class="card-body text-white" style="background-color:#4DD8E8">
+                    <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$pd->id.'') }}"> <h5 class="card-title text-center">{{$pd->nameP}}</h5></a>
                   </div>
-                </div>
-              </a>
             </div>
+          </div>
               @endforeach
             </div>
-              
-              
             @endforeach
         </div>
         </div>

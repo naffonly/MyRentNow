@@ -30,22 +30,20 @@
 <h2 class="ml-4 text-center">Kamera Katalog</h2>
 </div>
             <hr>
-            <div class="container">
-            <div class="row row-cols-3">
+            <div class="container ">
+            <div class="row">
               <!-- kamera1 -->
               @foreach($cameras as $camera)
-              <a class="nav-link  link-dark" href="{{ url('/detail-katalog/'.$camera->id.'') }}">
-              <div class="col">
-                <div class="row m-1">
-                    <div class="card">
-                      <img src="{{ asset($camera->imgP) }}" width="400px" class="img-fluid" alt="...">
+             
+              <div class="col-4 mb-3">
+                    <div class="card" >
+                      <img src="{{ asset($camera->imgP) }}" class="card-img-top" width="400px" alt="...">
                       <div class="card-body text-white" style="background-color:#4DD8E8">
-                       <center><h5 class="card-title">{{$camera->nameP}}</h5></center> 
-                    </div>
-                  </div>
+                        <a class="nav-link  link-light" href="{{ url('/detail-katalog/'.$camera->id.'') }}"> <h5 class="card-title text-center">{{$camera->nameP}}</h5></a>
+                      </div>
                 </div>
               </div>
-              </a>
+            
 
               @endforeach
               </div>

@@ -29,13 +29,11 @@
         <div class="container">
             <div class="block-content">
                 <div class="post-body">
-                <h1 class="text-center">{{$db->title}}</h1>
+                <h1 class="text-center">FAQ</h1>
                 <br>
-                    <div class="container">
-                        <img class="rounded mx-auto d-block" src="{{ asset($db->image) }}"  alt="A generic square placeholder image with rounded corners in a figure." width="50%">
-                    </div>
+                    
                     <br>
-                    <p style="text-align: justify">{{$db->desk}}</p>
+                    <p style="text-align: justify">suu</p>
                 </div>
             </div>
         </div>

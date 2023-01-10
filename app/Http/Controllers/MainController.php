@@ -270,6 +270,10 @@ class MainController extends Controller
         return view('main.katalog.detail-katalog',compact('product','newInOne','newInTwo','newInThree'));
     }
 
+    public function faq()
+    {
+      return view('main.blog.faq');
+    }
     public function listBlog()
     {
         $blog = Article::where('itsDelete',1)->get();

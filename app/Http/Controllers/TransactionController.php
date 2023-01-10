@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
 class TransactionController extends Controller
 {
     /**
@@ -188,16 +190,17 @@ class TransactionController extends Controller
     {
         //
         // dd($request);
-        $users = User::where('itsDelete',1)->get()->count();
-        $trans = Transaction::where('itsDelete',1)->get()->count();
+        $Tfinish = Transaction::where('status',3)->where('itsDelete',1)->where('idPeminjam',Auth::user()->id)->get()->count();
+        $trans = Transaction::where('status',2)->where('itsDelete',1)->where('idPeminjam',auth::user()->id)->get()->count();
         $product = Product::where('itsDelete',1)->get()->count();
-        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->get()[0]->price;
-        $Pending = Transaction::where('status',1)->where('itsDelete',1)->get()->count();
+        $rs = Transaction::select(DB::raw('sum(priceRent) as price'))->where('itsDelete',1)->where('idPeminjam',auth::user()->id)->get()[0]->price;
+        $TTotal = Transaction::where('itsDelete',1)->where('idPeminjam',auth::user()->id)->get()->count();
         $widget = [
-            'users' => $users,
-            'pending' => $rs,
-            'transaksi' => $trans,
-            'product' => $product,
+            'Tfinish' => $Tfinish,
+            'TPrice' => $rs,
+            'total' => $TTotal,
+            'Ontrans' => $trans,
+            //...
         ];
        
         $request->validate([

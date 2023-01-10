@@ -69,53 +69,54 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="d-flex p-3">
-                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><a href="{{route('faq')}}" style="color: white"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
-                                </svg></a></div>
+                                </svg></div>
                             <div class="px-2">
-                                <h5 class="mb-0 mt-1">Bagaimana cara menyewa barang di RentNow?<br></h5>
+                                <a href="{{route('faq')}}" style="color: white"> <h5 class="mb-0 mt-1 text-dark">Bagaimana cara menyewa barang di RentNow?<br></h5> </a>
+                            </div>
+                       
+                        </div>
+                        <div class="d-flex p-3">
+                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg" style="background: #4dd8e8;">
+                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
+                                </svg></div>
+                            <div class="px-2">
+                                <a href="{{route('faq')}}" style="color: white">  <h5 class="mb-0 mt-1 text-dark">Apakah saya bisa order melalui media sosial?<br></h5></a>
                             </div>
                         </div>
                         <div class="d-flex p-3">
-                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><a href="{{route('faq')}}" style="color: white"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg" style="background: #4dd8e8;">
+                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg" style="background: #4dd8e8;">
                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
                                 </svg></a></div>
                             <div class="px-2">
-                                <h5 class="mb-0 mt-1">Apakah saya bisa order melalui media sosial?<br></h5>
-                            </div>
-                        </div>
-                        <div class="d-flex p-3">
-                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><a href="{{route('faq')}}" style="color: white"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg" style="background: #4dd8e8;">
-                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
-                                </svg></a></div>
-                            <div class="px-2">
-                                <h5 class="mb-0 mt-1">Bagaimana jika saya ingin mengembalikan barang lebih awal?<br></h5>
+                                <a href="{{route('faq')}}" style="color: white"> <h5 class="mb-0 mt-1 text-dark">Bagaimana jika saya ingin mengembalikan barang lebih awal?<br></h5></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex p-3">
-                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><a href="{{route('faq')}}" style="color: white"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
-                                </svg></a></div>
+                                </svg></div>
                             <div class="px-2">
-                                <h5 class="mb-0 mt-1">Wilayah mana saja yang menjadi cakupan RentNow?<br></h5>
+                                <a href="{{route('faq')}}" style="color: white"> <h5 class="mb-0 mt-1 text-dark">Wilayah mana saja yang menjadi cakupan RentNow?<br></h5></a>
                             </div>
                         </div>
                         <div class="d-flex p-3">
-                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><a href="{{route('faq')}}" style="color: white"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
-                                </svg></a></div>
+                                </svg></div>
                             <div class="px-2">
-                                <h5 class="mb-0 mt-1">Apakah barang dapat dimput sendiri?<br></h5>
+                                <a href="{{route('faq')}}" style="color: white">  <h5 class="mb-0 mt-1 text-dark">Apakah barang dapat dimput sendiri?<br></h5></a>
                             </div>
                         </div>
                         <div class="d-flex p-3">
-                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><a href="{{route('faq')}}" style="color: white"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
+                            <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon sm" style="background: #4dd8e8;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-plus-lg">
                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"></path>
-                                </svg></a></div>
+                                </svg></div>
                             <div class="px-2">
-                                <h5 class="mb-0 mt-1">Apakah barang yang dikirimkan dalam keadaan bersih?<br></h5>
+                                <a href="{{route('faq')}}" style="color: white"> <h5 class="mb-0 mt-1 text-dark">Apakah barang yang dikirimkan dalam keadaan bersih?<br></h5></a>
                             </div>
                         </div>
                     </div>

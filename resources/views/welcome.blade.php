@@ -27,7 +27,7 @@
     </header>
     <main class="page landing-page">
         
-        <section class="clean-block clean-hero bg-section mb-5" style="height: 80%;">
+        <section class="justify-content-center bg-section mb-5" style="height: 80%;">
             <div class="container  d-flex align-items-center">
                 <div class="container text-center text text-white ">
                 <h2 style="font-size: 48px;">Solusi Mahasiswa&nbsp;Untuk&nbsp;<br></h2>
@@ -35,7 +35,7 @@
             </div>
         </div>
         </section>
-        <section class="d-xxl-flex justify-content-xxl-center clean-block features">
+        <section class="d-xxl-flex justify-content-center  features">
             <div class="container justify-content-center" style="margin-right: 0;margin-left: 0px;">
                 <div class="block-heading"></div>
                 <div class="row align-items-center ">

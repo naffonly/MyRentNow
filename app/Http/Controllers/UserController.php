@@ -249,10 +249,7 @@ class UserController extends Controller
                 $link = 'user.softDelete';
                 $userid = 'user';
                 $html = '
-                <a class="btn btn-info" href="/detail-user/'.$user->id.'">Show</a>
-                <form class="btn-group" action="'. route($link,[$userid=>$user->id]) . '" method="put">
-                 <button type="submit" class="btn btn-danger">Delete</button>
-                </form>';
+                <a class="btn btn-info" href="/detail-user/'.$user->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
                 return $html;
             })
             ->make(true);
@@ -286,7 +283,7 @@ class UserController extends Controller
                 $link = 'user.unBan';
                 $userid = 'user';
                 $html = '
-                <a class="btn btn-info" href="/detail-user/'.$user->id.'">Show</a>
+                <a class="btn btn-info" href="/detail-user/'.$user->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 <form class="btn-group" action="'. route($link,[$userid=>$user->id]) . '" method="put">
                  <button type="submit" class="btn btn-danger">unBan</button>
                 </form>

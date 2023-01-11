@@ -34,6 +34,8 @@ Route::group(['middleware' => ['auth','ceklogin:1']],function(){
     Route::get('/detail-user/{user}', 'UserController@show')->name('user.show');
     Route::post('/user-update', 'UserController@update')->name('user.update');
     Route::get('/user-del/{user}', 'UserController@softDelete')->name('user.softDelete');
+    Route::get('/user-unBan/{user}', 'UserController@softDelete')->name('user.unBan');
+    Route::get('/user-delete/{id}', 'UserController@destroy')->name('user.destroy');
     
     Route::get('/product-overview','ProductController@index')->name('product.overview');
     Route::get('/create-product','ProductController@create')->name('product.create');
@@ -77,7 +79,6 @@ Route::group(['middleware' => ['auth','ceklogin:1']],function(){
     Route::get('/getAllTransactionsLoaned','TransactionController@getAllTransactionsLoaned')->name('getAllTransactionsLoaned');
     Route::get('/getAllTransactionsReturned','TransactionController@getAllTransactionsReturned')->name('getAllTransactionsReturned');
     Route::get('/getAllTransactionsLost','TransactionController@getAllTransactionsLost')->name('getAllTransactionsLost');
-
 });
 
 

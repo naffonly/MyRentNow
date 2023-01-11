@@ -160,12 +160,12 @@
                 </div>
                 <div class="col">
                     <h5>Hubungi Kami</h5>
-                    <p style="color: rgb(255,255,255);">xxxxx@rentnow.com<br></p>
+                    <p style="color: rgb(255,255,255);">admin@rentnow.com<br></p>
                 </div>
                 <div class="col">
                     <h5>Media Sosial Kami</h5>
                     <p style="color: rgb(255,255,255);">@rent_now</p>
-                    <p style="color: rgb(255,255,255);">08123xxxxxx</p>
+                    <p style="color: rgb(255,255,255);">08976666</p>
                 </div>
                 
             </div>

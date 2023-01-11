@@ -280,6 +280,9 @@ class TransactionController extends Controller
     public function destroy($id)
     {
         //
+        $transaction = Transaction::find($id);
+        $transaction->delete();
+        return back();
     }
     public function loanedRent(Request $request,Transaction $transaction)
     {
@@ -356,6 +359,8 @@ class TransactionController extends Controller
             ->addColumn('action', function($transaction) {
                 $html = '
                 <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-danger mb-1" href="/transaction-delete/'.$transaction->id.'" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                
                 ';
                
                 return $html;
@@ -394,6 +399,7 @@ class TransactionController extends Controller
             return DataTables::of($transactions)
             ->addColumn('action', function($transaction) {
                 $linkAprrove = 'transaction.loaned';
+                $linkDeleted = 'transaction.destroy';
                 $transactionid = 'transaction';
                 $html = '
                 <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -401,6 +407,7 @@ class TransactionController extends Controller
                 <input type="hidden" value="'.$transaction->id.'" name="id" > 
                 <button type="submit" class="btn btn-success"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
                 </form>
+                <a class="btn btn-danger mb-1" href="/transaction-delete/'.$transaction->id.'" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 ';
                
                 return $html;

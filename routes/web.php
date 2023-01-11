@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth','ceklogin:1']],function(){
     Route::post('/update-article','ArticleController@update')->name('article.update');
     Route::get('/delete-article/{article}','ArticleController@softDelete')->name('article.softDelete');
     
+    Route::get('/transaction-delete/{id}','TransactionController@destroy')->name('transaction.destroy');
     Route::get('/transaction-overview','TransactionController@index')->name('transaction.overview');
     Route::get('/transaction-overview-pending','TransactionController@indexPending')->name('transaction.overview.pending');
     Route::get('/transaction-overview-loaned','TransactionController@indexLoaned')->name('transaction.overview.loaned');
@@ -67,6 +68,16 @@ Route::group(['middleware' => ['auth','ceklogin:1']],function(){
     Route::get('/returnedLostRent-transaction/{transaction}','TransactionController@returnedLostRent')->name('transaction.returnedLostRent');
     Route::get('/founded-transaction/{transaction}','TransactionController@foundRent')->name('transaction.found');
     Route::get('/show-transaction/{transaction}','TransactionController@getTransaction')->name('getTransaction');
+
+    Route::get('/getAllProducts','ProductController@getAllProducts')->name('getAllProducts');
+    Route::get('/getAllArcticles','ArticleController@getAllArcticles')->name('getAllArcticles');
+    Route::get('/getAllTransactions','TransactionController@getAllTransactions')->name('getAllTransactions');
+    Route::get('/getAllUsers','UserController@getAllUsers')->name('getAllUsers');
+    Route::get('/getAllTransactionsPending','TransactionController@getAllTransactionsPending')->name('getAllTransactionsPending');
+    Route::get('/getAllTransactionsLoaned','TransactionController@getAllTransactionsLoaned')->name('getAllTransactionsLoaned');
+    Route::get('/getAllTransactionsReturned','TransactionController@getAllTransactionsReturned')->name('getAllTransactionsReturned');
+    Route::get('/getAllTransactionsLost','TransactionController@getAllTransactionsLost')->name('getAllTransactionsLost');
+
 });
 
 
@@ -78,15 +89,6 @@ Route::group(['middleware' => ['auth','ceklogin:2']],function(){
     Route::get('/dasboard', 'CustomerController@index')->name('dasboard');
     Route::post('/store-rent','TransactionController@rent')->name('transaction.rent');
 });
-
-Route::get('/getAllProducts','ProductController@getAllProducts')->name('getAllProducts');
-Route::get('/getAllArcticles','ArticleController@getAllArcticles')->name('getAllArcticles');
-Route::get('/getAllTransactions','TransactionController@getAllTransactions')->name('getAllTransactions');
-Route::get('/getAllUsers','UserController@getAllUsers')->name('getAllUsers');
-Route::get('/getAllTransactionsPending','TransactionController@getAllTransactionsPending')->name('getAllTransactionsPending');
-Route::get('/getAllTransactionsLoaned','TransactionController@getAllTransactionsLoaned')->name('getAllTransactionsLoaned');
-Route::get('/getAllTransactionsReturned','TransactionController@getAllTransactionsReturned')->name('getAllTransactionsReturned');
-Route::get('/getAllTransactionsLost','TransactionController@getAllTransactionsLost')->name('getAllTransactionsLost');
 
 
 Route::get('/katalog-barang','MainController@katalogIndex')->name('katalog');
@@ -103,8 +105,4 @@ Route::get('/laptop-katalog','MainController@laptopKatalog')->name('laptopKatalo
 Route::get('/ipad-katalog','MainController@ipadKatalog')->name('ipadKatalog');
 Route::get('/proyektor-katalog','MainController@proyektorKatalog')->name('proyektorKatalog');
 Route::get('/detail-katalog/{id}','MainController@detailKatalog')->name('detailKatalog');
-
-
-
-
 Route::get('/detail-katalog','MainController@detailKatalog')->name('dKatalog')->middleware('auth');

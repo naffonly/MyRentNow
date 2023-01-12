@@ -125,8 +125,7 @@
                         <button type="submit" class="btn btn-info">Save</button>
 
                     </form>
-
-                                <hr>
-    </div>
-    </div>
+                <hr>
+            </div>
+        </div>
 @endsection

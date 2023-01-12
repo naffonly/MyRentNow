@@ -246,7 +246,7 @@ class MainController extends Controller
                 )
             ->join('categoryproduct as cp','cp.id','=','categoryId')
             ->where('itsDelete','=','1')
-            ->where('p.id','=', rand(21,30))
+            ->where('p.id','=', rand(1,20))
             ->orderBy('id', 'desc')
             ->limit(3)
             ->get();

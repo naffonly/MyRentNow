@@ -108,7 +108,7 @@ class ArticleController extends Controller
         ];
 
         DB::table('articles')->insert($article );
-        return view('admin.article.daftar-article', compact('widget'));
+        return view('admin.article.daftar-article', compact('widget'))->with('success','berhasil diposting');
     }
 
     /**

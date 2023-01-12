@@ -118,7 +118,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="username">Username<span class="small text-danger">*</span></label>
-                                        <input type="text" id="username" class="form-control" name="username" placeholder="username">
+                                        <input type="text" id="username" class="form-control" name="username" placeholder="username" required>
                                     </div>
                                 </div>
                             </div>
@@ -126,13 +126,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="name">Name<span class="small text-danger">*</span></label>
-                                        <input type="text" id="name" class="form-control" name="name" placeholder="Name"  >
+                                        <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="lastname">Last name</label>
-                                        <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Last name"  >
+                                        <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Last name"  required>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="email">Email address<span class="small text-danger">*</span></label>
-                                        <input type="email" id="email" class="form-control" name="email" placeholder="example@example.com"  >
+                                        <input type="email" id="email" class="form-control" name="email" placeholder="example@example.com"  required>
                                     </div>
                                 </div>
                             </div>
@@ -150,13 +150,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" >Number Phone</label>
-                                        <input type="text" class="form-control" name="phone" placeholder="number phone">
+                                        <input type="number" class="form-control" name="phone" placeholder="number phone"required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label"  >Birthdate</label>
-                                        <input type="date"  class="form-control" name="birthdate">
+                                        <input type="date"  class="form-control" name="birthdate" required>
                                     </div>
                                 </div>
 
@@ -165,13 +165,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" >Address</label>
-                                        <input type="text" class="form-control" name="address" placeholder="address">
+                                        <input type="text" class="form-control" name="address" placeholder="address" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" >Role</label>
-                                            <select class="form-select form-control " name="roleId">
+                                            <select class="form-select form-control " name="roleId" required>
                                                 <option selected>Select Role</option>
                                                 <option value="1">admin</option>
                                                 <option value="2">Costumer</option>
@@ -183,14 +183,14 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" >password</label>
-                                        <input type="text" class="form-control" name="password" placeholder="password">
+                                        <label class="form-control-label">password</label>
+                                        <input type="password" class="form-control" name="password" placeholder="password" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label">password confirmation</label>
-                                        <input type="text"  class="form-control" name="password_confirmation" placeholder="password_confirmation">
+                                        <input type="password"  class="form-control" name="password_confirmation" placeholder="password_confirmation" required>
                                     </div>
                                 </div>
                             </div>

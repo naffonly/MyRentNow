@@ -152,13 +152,13 @@
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" >Harga Barang</label>
-                                        <input type="text" class="form-control" name="priceProduct" placeholder="Harga Barang">
+                                        <input type="number" class="form-control" name="priceProduct" placeholder="Harga Barang">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label"  >Stok Barang</label>
-                                        <input type="text"  class="form-control" name="stockProduct"  placeholder="Stok Barang">
+                                        <input type="number"  class="form-control" name="stockProduct"  placeholder="Stok Barang">
                                     </div>
                                 </div>
 

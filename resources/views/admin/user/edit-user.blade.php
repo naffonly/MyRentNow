@@ -73,7 +73,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" >Number Phone</label>
-                                        <input type="text" class="form-control" name="phone" value="{{ $user->phone}}">
+                                        <input type="number" class="form-control" name="phone"  value="{{ $user->phone}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

@@ -304,7 +304,7 @@ class TransactionController extends Controller
     public function returnedLostRent(Transaction $transaction)
     {
         # code...
-        DB::table('products')->where('id',$transaction->idProduct)->increment('stockProduct');
+       
         $transaction->status = 4;
         $transaction->save();
         return back();
@@ -321,6 +321,7 @@ class TransactionController extends Controller
     public function FoundRent(Request $request,Transaction $transaction)
     {
         # code...
+        DB::table('products')->where('id',$transaction->idProduct)->increment('stockProduct');
         $transaction->status = 3;
         $transaction->save();
         return back();
@@ -359,8 +360,6 @@ class TransactionController extends Controller
             ->addColumn('action', function($transaction) {
                 $html = '
                 <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                <a class="btn btn-danger mb-1" href="/transaction-delete/'.$transaction->id.'" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                
                 ';
                
                 return $html;
@@ -498,9 +497,7 @@ class TransactionController extends Controller
                 $transactionid = 'transaction';
                 $html = '
                 <a class="btn btn-info mb-1" href="/show-transaction/'.$transaction->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                <form class="btn-group" action="'. route($linkLost,[$transactionid=>$transaction->id]) . '" method="put">
-                <button type="submit" class="btn btn-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-                </form>
+                
                 ';
                
                 return $html;

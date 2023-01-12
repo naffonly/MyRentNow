@@ -88,8 +88,8 @@ class UserController extends Controller
             'lastname' => ['required', 'string', 'max:20'],
             'address' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'birthdate' => ['required', 'date'],
-            'phone' => ['required', 'string', 'string'],
+            'birthdate' => ['required', 'date','before:today'],
+            'phone' => ['required', 'string', 'string', 'max:13'],
             'roleId' => ['required','string'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             
@@ -112,8 +112,9 @@ class UserController extends Controller
             'itsDelete' => 1,
         ];
 
-        DB::table('users')->insert($user);
-        return view('admin.overview' , compact('widget'));
+      DB::table('users')->insert($user);
+
+        return view('admin.overview' , compact('widget'))->with('success','berhasil ditambahkan');
     }
 
     /**
@@ -161,6 +162,7 @@ class UserController extends Controller
             'product' => $product,
             //...
         ];
+      
         $request->validate([
             'username'  => ['required'],
             'name'      => ['required'],
@@ -168,9 +170,9 @@ class UserController extends Controller
             'email'     => ['required'],
             'address'   => ['required'],
             'role'      => ['required'],
-            'phone'     => ['required'],
+            'phone'     => ['required','max:12'],
             'birthdate' => ['required', 'before:today'],
-            'password' => 'required|confirmed', 
+            'password' => 'confirmed', 
         ]);
 
     
@@ -190,7 +192,8 @@ class UserController extends Controller
             'birthdate'     => $request->birthdate,
             'password' => Hash::make($request->password),
         ]);
-            return view('admin.overview', compact('widget'));
+     
+            return view('admin.overview', compact('widget'))->with('success','berhasil diupdate');
     }
 
     /**

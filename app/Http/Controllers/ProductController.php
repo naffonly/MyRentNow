@@ -59,7 +59,7 @@ class ProductController extends Controller
             'product' => $product,
             //...
         ];
-        return view('admin.product.create-product', compact('widget'));
+        return view('admin.product.create-product', compact('widget'))->with('success');
     }
 
     /**
@@ -117,7 +117,7 @@ class ProductController extends Controller
         ];
 
         DB::table('products')->insert($product);
-        return view('admin.product.daftar-product', compact('widget'));
+        return view('admin.product.daftar-product', compact('widget'))->with('success','berhasil');
     }
 
     /**
@@ -246,6 +246,6 @@ class ProductController extends Controller
         # code...
         $product->itsDelete = 0;
         $product->save();
-        return back();
+        return back()->with('success','berhasil dihapus');
     }
 }

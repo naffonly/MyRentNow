@@ -22,12 +22,11 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/', 'MainController@index')->name('landing');
 
-Route::group(['middleware' => ['auth','ceklogin:1']],function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth','cekAdmin']],function(){
 
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update'); 
-    
     Route::get('/overview', 'UserController@index')->name('admin.overview');
     Route::get('/add-user', 'UserController@create')->name('user.create');
     Route::post('/store-user', 'UserController@store')->name('user.store');
@@ -82,7 +81,7 @@ Route::group(['middleware' => ['auth','ceklogin:1']],function(){
 });
 
 
-Route::group(['middleware' => ['auth','ceklogin:2']],function(){
+Route::group(['middleware' => ['auth','cekCustomer']],function(){
     Route::get('/costumer-profile', 'CustomerController@customerProfil')->name('costumer');
     Route::put('/costumer-profile', 'CustomerController@profilUpdate')->name('costumer.update');
     Route::get('/customer-transaction/{transaction}','CustomerController@getCosTransaction')->name('getCosTransaction');

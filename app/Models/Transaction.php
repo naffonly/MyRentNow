@@ -16,6 +16,7 @@ class Transaction extends Model
         'status',
         'priceRent',
         'itsDelete',
+        'nEmply',
         'created_at',
         'updated_at',
     ];

@@ -112,6 +112,7 @@
                                 <th>Barang Diambil</th>
                                 <th>Barang Kembali</th>
                                 <th>Status</th>
+                                <th>Pegawai</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -138,6 +139,7 @@ columns: [
 { data: 'dateIn', name: 'dateIn' },
 { data: 'dateOut', name: 'dateOut' },
 { data: 'status', name: 'status' },
+{ data: 'Emply', name: 'Emply' },
 {data: 'action', name: 'action', orderable: false},
 ],
 order: [[0, 'desc']]

@@ -92,7 +92,6 @@ class UserController extends Controller
             'phone' => ['required', 'string', 'string', 'max:13'],
             'roleId' => ['required','string'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            
         ],
         [
             'username.required' => 'Username harus diisi',
@@ -225,7 +224,42 @@ class UserController extends Controller
 
     public function getAllUsers()
     {
-        $users = DB::table('users as u')
+        if (Auth::user()->roleId == 3) {
+
+            $users = DB::table('users as u')
+            ->select(
+                'u.id as id',
+                'u.username as username',
+                'u.name as name',
+                'u.lastname as lname',
+                'u.email as email',
+                'u.address as address',
+                'u.phone as phone',
+                'u.roleId as roles',
+                'r.nameRole as role',
+                'u.indetityFace as iFace',
+                'u.indetityCard as iCard',
+                'u.birthdate as birthdate',
+                'u.itsDelete as statusAkun'
+                )
+            ->join('roles as r','r.id','=','roleId')
+            ->where('itsDelete','=','1')
+            ->where('u.roleId','=','2')
+            ->orderBy('id', 'asc')
+            ->get();
+            
+
+            return DataTables::of($users)
+            ->addColumn('action', function($user) {
+                $link = 'user.softDelete';
+                $userid = 'user';
+                $html = '
+                <a class="btn btn-info" href="/detail-user/'.$user->id.'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
+                return $html;
+            })
+            ->make(true);
+        }
+            $users = DB::table('users as u')
             ->select(
                 'u.id as id',
                 'u.username as username',
@@ -256,6 +290,8 @@ class UserController extends Controller
                 return $html;
             })
             ->make(true);
+        
+       
     }
 
     public function getAllBanUsers()

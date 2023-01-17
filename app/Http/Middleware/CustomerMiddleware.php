@@ -2,13 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-class AdminMiddleware
+class CustomerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -26,11 +25,12 @@ class AdminMiddleware
         //     # code...
         // }
 
-       
-        if (!(Auth::user()->roleId == 1 || Auth::user()->roleId == 3 ) ) {
-    
-            return Redirect::to('dasboard'); 
+   
+
+       if (!Auth::user()->roleId == 2) {
+            return Redirect::to('home'); 
         }
-        return $next($request);
+    
+       return $next($request);
     }
 }

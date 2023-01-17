@@ -206,14 +206,12 @@ class TransactionController extends Controller
         $request->validate([
             'idPeminjam' => ['required', 'integer'],
             'idProduct' => ['required', 'integer'],
-            'dateIn' => ['required'],
-            'dateOut' => ['required'],
+            'dateIn' => ['required','after:today'],
+            'dateOut' => ['required','after:today'],
         ],
         [
-            'idPeminjam.required' => 'Pilih Peminjam Terlebih dahulu',
-            'idProduct.required' => 'Pilih Barang Terlebih dahulu',
-            'dateIn.required' => 'pilihlah waktu pengambilan barang Terlebih dahulu',
-            'dateOut.required' => 'Pilihlah waktu kembali barang Terlebih dahulu'
+            'dateIn.before' => 'tidak bisa waktu pegambilan barang sebelum hari ini',
+            'dateOut.before' => 'tidak bisa waktu kembali barang sebelum hari ini',
         ]);
 
         $products = Product::find($request->idProduct);
@@ -288,6 +286,7 @@ class TransactionController extends Controller
     {
         # code...
         DB::table('products')->where('id',$transaction->idProduct)->decrement('stockProduct');
+        $transaction->nEmply = Auth::user()->name;
         $transaction->status = 2;
         $transaction->save();
         return back();
@@ -348,6 +347,7 @@ class TransactionController extends Controller
                  '),
                 't.itsDelete as itsDelete',
                 't.priceRent as price',
+                't.nEmply as Emply',
                 )
             ->join('products as p','p.id','=','idProduct')
             ->join('users as u','u.id','=','idPeminjam')
@@ -386,6 +386,7 @@ class TransactionController extends Controller
                  '),
                 't.itsDelete as itsDelete',
                 't.priceRent as price',
+                't.nEmply as Emply',
                 )
             ->join('products as p','p.id','=','idProduct')
             ->join('users as u','u.id','=','idPeminjam')
@@ -433,6 +434,7 @@ class TransactionController extends Controller
                  '),
                 't.itsDelete as itsDelete',
                 't.priceRent as price',
+                't.nEmply as Emply',
                 )
             ->join('products as p','p.id','=','idProduct')
             ->join('users as u','u.id','=','idPeminjam')
@@ -482,6 +484,7 @@ class TransactionController extends Controller
                  '),
                 't.itsDelete as itsDelete',
                 't.priceRent as price',
+                't.nEmply as Emply',
                 )
             ->join('products as p','p.id','=','idProduct')
             ->join('users as u','u.id','=','idPeminjam')
@@ -524,6 +527,7 @@ class TransactionController extends Controller
                  '),
                 't.itsDelete as itsDelete',
                 't.priceRent as price',
+                't.nEmply as Emply',
                 )
             ->join('products as p','p.id','=','idProduct')
             ->join('users as u','u.id','=','idPeminjam')
@@ -579,6 +583,7 @@ class TransactionController extends Controller
              '),
             't.itsDelete as itsDelete',
             't.priceRent as price',
+            't.nEmply as Emply',
             )
         ->join('products as p','p.id','=','idProduct')
         ->join('users as u','u.id','=','idPeminjam')

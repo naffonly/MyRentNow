@@ -99,8 +99,10 @@
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Data Users</h6>
             </div>
-            <a class="btn btn-success mx-2" href="{{ route('user.create') }}"> Tambah Data</a>
-
+            @if (Auth::User()->roleId == 1)
+                <a class="btn btn-success mx-2" href="{{ route('user.create') }}"> Tambah Data</a>
+            @endif
+            
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="datatable">

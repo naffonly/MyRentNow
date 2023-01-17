@@ -184,7 +184,8 @@ class CustomerController extends Controller
                 END) as status
                  '),
                 't.itsDelete as itsDelete',
-                't.priceRent as price',
+                't.status as tStatus',
+                't.nEmply as Emply',
                 )
             ->join('products as p','p.id','=','idProduct')
             ->join('users as u','u.id','=','idPeminjam')

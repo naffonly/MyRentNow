@@ -114,6 +114,7 @@
                                 <th>Waktu Kembali</th>  
                                 <th>Harga</th>
                                 <th>Status Transaksi</th>  
+                                <th>Pegawai</th>  
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -141,6 +142,7 @@ columns: [
 { data: 'dateOut', name: 'dateOut' },
 { data: 'price', name: 'price' },
 { data: 'status', name: 'status' },
+{ data: 'Emply', name: 'Emply' },
 {data: 'action', name: 'action', orderable: false},
 ],
 order: [[0, 'desc']]
